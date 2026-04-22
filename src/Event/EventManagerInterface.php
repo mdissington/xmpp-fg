@@ -34,9 +34,9 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Event;
+namespace XmppFg\Xmpp\Event;
 
-use Fabiang\Xmpp\Event\EventInterface;
+use XmppFg\Xmpp\Event\EventInterface;
 
 /**
  * Event manager interface.

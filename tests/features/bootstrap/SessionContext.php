@@ -31,14 +31,14 @@
  * @author    Fabian Grutschus <f.grutschus@lubyte.de>
  * @copyright 2014 Fabian Grutschus. All rights reserved.
  * @license   BSD
- * @link      http://github.com/fabiang/xmpp
+ * @link      http://github.com/XmppFg/xmpp
  */
 
-namespace Fabiang\Xmpp\Integration;
+namespace XmppFg\Xmpp\Integration;
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
-use Fabiang\Xmpp\EventListener\Stream\Session;
+use XmppFg\Xmpp\EventListener\Stream\Session;
 use PHPUnit\Framework\Assert;
 
 class SessionContext implements Context
@@ -71,7 +71,7 @@ class SessionContext implements Context
             "<?xml version='1.0'?>"
             . "<stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams'>",
             "<stream:features><session xmlns='urn:ietf:params:xml:ns:xmpp-session'/></stream:features>",
-            "<iq type='result' id='fabiang_xmpp_1234'><session xmlns='urn:ietf:params:xml:ns:xmpp-session'/></iq>"
+            "<iq type='result' id='XmppFg_xmpp_1234'><session xmlns='urn:ietf:params:xml:ns:xmpp-session'/></iq>"
         ));
     }
 
@@ -84,7 +84,7 @@ class SessionContext implements Context
             "<?xml version='1.0'?>"
             . "<stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams'>",
             "<stream:features><session xmlns='urn:ietf:params:xml:ns:xmpp-session'/></stream:features>",
-            "<iq type='result' id='fabiang_xmpp_1234'/>"
+            "<iq type='result' id='XmppFg_xmpp_1234'/>"
         ));
     }
 
@@ -99,7 +99,7 @@ class SessionContext implements Context
         });
 
         $this->listener = $listener[0][0];
-        $this->listener->setId('fabiang_xmpp_1234');
+        $this->listener->setId('XmppFg_xmpp_1234');
     }
 
     /**
@@ -109,7 +109,7 @@ class SessionContext implements Context
     {
         $buffer = $this->getConnection()->getBuffer();
         Assert::assertRegExp(
-            '#^<iq type="set" id="fabiang_xmpp_[^"]+"><session xmlns="urn:ietf:params:xml:ns:xmpp-session"/></iq>$#',
+            '#^<iq type="set" id="XmppFg_xmpp_[^"]+"><session xmlns="urn:ietf:params:xml:ns:xmpp-session"/></iq>$#',
             $buffer[1]
         );
     }
@@ -124,7 +124,7 @@ class SessionContext implements Context
 
     /**
      *
-     * @return \Fabiang\Xmpp\Connection\ConnectionTestDouble
+     * @return \XmppFg\Xmpp\Connection\ConnectionTestDouble
      */
     public function getConnection()
     {

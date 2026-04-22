@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Protocol;
+namespace XmppFg\Xmpp\Protocol;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Protocol\Roster::class)]
+#[CoversClass(\XmppFg\Xmpp\Protocol\Roster::class)]
 class RosterTest extends TestCase
 {
 
@@ -62,9 +62,9 @@ class RosterTest extends TestCase
     /**
      * Test turning object into string.
      *
-     * @covers Fabiang\Xmpp\Protocol\Roster::toString
-     * @uses Fabiang\Xmpp\Util\XML::generateId
-     * @uses Fabiang\Xmpp\Util\XML::quote
+     * @covers XmppFg\Xmpp\Protocol\Roster::toString
+     * @uses XmppFg\Xmpp\Util\XML::generateId
+     * @uses XmppFg\Xmpp\Util\XML::quote
      * @return void
      */
     public function testToString()

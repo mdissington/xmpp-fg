@@ -34,9 +34,9 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream\Authentication;
+namespace XmppFg\Xmpp\EventListener\Stream\Authentication;
 
-use Fabiang\Xmpp\EventListener\AbstractEventListener;
+use XmppFg\Xmpp\EventListener\AbstractEventListener;
 
 /**
  * Handler for "anonymous" authentication mechanism.

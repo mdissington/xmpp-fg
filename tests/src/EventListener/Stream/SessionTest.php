@@ -34,15 +34,15 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream;
+namespace XmppFg\Xmpp\EventListener\Stream;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Event\XMLEvent;
 
-#[CoversClass(\Fabiang\Xmpp\EventListener\Stream\Session::class)]
+#[CoversClass(\XmppFg\Xmpp\EventListener\Stream\Session::class)]
 class SessionTest extends TestCase
 {
 
@@ -80,13 +80,13 @@ class SessionTest extends TestCase
      * Test attaching events.
      *
      * @covers ::attachEvents
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
      * @return void
      */
     public function testAttachEvents()
@@ -122,15 +122,15 @@ class SessionTest extends TestCase
      * @covers ::sessionStart
      * @covers ::isBlocking
      * @covers ::respondeToFeatures
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\EventListener\Stream\AbstractSessionEvent
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\EventListener\Stream\AbstractSessionEvent
      * @return void
      */
     public function testSessionAsFeatureElement()
@@ -156,15 +156,15 @@ class SessionTest extends TestCase
      *
      * @covers ::sessionStart
      * @covers ::iq
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\EventListener\Stream\AbstractSessionEvent
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\EventListener\Stream\AbstractSessionEvent
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
      * @depends testSessionAsFeatureElement
      * @return void
      */
@@ -198,18 +198,18 @@ class SessionTest extends TestCase
      *
      * @covers ::setId
      * @covers ::getId
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
      * @return void
      */
     public function testSetAndGetId()
     {
-        $this->assertMatchesRegularExpression('#^fabiang_xmpp_.+$#', $this->object->getId());
+        $this->assertMatchesRegularExpression('#^xmppfg_xmpp_.+$#', $this->object->getId());
         $id = 'test';
         $this->assertSame($id, $this->object->setId($id)->getId());
     }

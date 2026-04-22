@@ -34,16 +34,16 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream\Authentication;
+namespace XmppFg\Xmpp\EventListener\Stream\Authentication;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Event\XMLEvent;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Util\XML;
+use XmppFg\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Util\XML;
 
-#[CoversClass(\Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::class)]
+#[CoversClass(\XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::class)]
 class DigestMd5Test extends TestCase
 {
 
@@ -79,11 +79,11 @@ class DigestMd5Test extends TestCase
      * Test attaching events.
      *
      * @covers ::attachEvents
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
      * @return void
      */
     public function testAttachEvents()
@@ -142,12 +142,12 @@ class DigestMd5Test extends TestCase
      * @covers ::getUsername
      * @covers ::setPassword
      * @covers ::getPassword
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\XMLEvent
      * @return void
      */
     public function testAuthenticate()
@@ -166,10 +166,10 @@ class DigestMd5Test extends TestCase
      * Test blocking when authentication element is send.
      *
      * @covers ::auth
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::isBlocking
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::isBlocking
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testAuth()
@@ -185,18 +185,18 @@ class DigestMd5Test extends TestCase
      * @covers ::challenge
      * @covers ::response
      * @covers ::parseCallenge
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::getUsername
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::setUsername
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::getPassword
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::setPassword
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::getUsername
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::setUsername
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::getPassword
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::setPassword
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
      * @return void
      */
     public function testChallenge()
@@ -237,15 +237,15 @@ class DigestMd5Test extends TestCase
      * Test sending a rspauth challenge.
      *
      * @covers ::challenge
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::parseCallenge
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::parseCallenge
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
      * @return void
      */
     public function testChallengeRspauth()
@@ -269,18 +269,18 @@ class DigestMd5Test extends TestCase
      * Test sending an empty challenge.
      *
      * @covers ::challenge
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::parseCallenge
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::parseCallenge
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Util\XML
      * @return void
      */
     public function testChallengeEmpty()
     {
-        $this->expectException(\Fabiang\Xmpp\Exception\Stream\AuthenticationErrorException::class);
+        $this->expectException(\XmppFg\Xmpp\Exception\Stream\AuthenticationErrorException::class);
         $this->expectExceptionMessage('Error when receiving challenge: ""');
 
         $document = new \DOMDocument;
@@ -296,10 +296,10 @@ class DigestMd5Test extends TestCase
      *
      * @covers ::success
      * @covers ::isBlocking
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::auth
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::auth
      * @return void
      */
     public function testSuccess()

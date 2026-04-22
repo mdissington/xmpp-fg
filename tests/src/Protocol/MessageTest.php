@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Protocol;
+namespace XmppFg\Xmpp\Protocol;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Protocol\Message::class)]
+#[CoversClass(\XmppFg\Xmpp\Protocol\Message::class)]
 class MessageTest extends TestCase
 {
 
@@ -63,23 +63,23 @@ class MessageTest extends TestCase
      * Test turning object into string.
      *
      * @covers ::toString
-     * @uses Fabiang\Xmpp\Protocol\Message::__construct
-     * @uses Fabiang\Xmpp\Protocol\Message::getType
-     * @uses Fabiang\Xmpp\Protocol\Message::setType
-     * @uses Fabiang\Xmpp\Protocol\Message::getTo
-     * @uses Fabiang\Xmpp\Protocol\Message::setTo
-     * @uses Fabiang\Xmpp\Protocol\Message::getMessage
-     * @uses Fabiang\Xmpp\Protocol\Message::setMessage
-     * @uses Fabiang\Xmpp\Util\XML::generateId
-     * @uses Fabiang\Xmpp\Util\XML::quote
-     * @uses Fabiang\Xmpp\Util\XML::quoteMessage
+     * @uses XmppFg\Xmpp\Protocol\Message::__construct
+     * @uses XmppFg\Xmpp\Protocol\Message::getType
+     * @uses XmppFg\Xmpp\Protocol\Message::setType
+     * @uses XmppFg\Xmpp\Protocol\Message::getTo
+     * @uses XmppFg\Xmpp\Protocol\Message::setTo
+     * @uses XmppFg\Xmpp\Protocol\Message::getMessage
+     * @uses XmppFg\Xmpp\Protocol\Message::setMessage
+     * @uses XmppFg\Xmpp\Util\XML::generateId
+     * @uses XmppFg\Xmpp\Util\XML::quote
+     * @uses XmppFg\Xmpp\Util\XML::quoteMessage
      * @return void
      */
     public function testToString()
     {
         $this->object->setTo('foobar')->setMessage('testmessage');
         $this->assertMatchesRegularExpression(
-            '#<message type="chat" id="fabiang_xmpp_[^"]+" to="foobar"><body>testmessage</body></message>#',
+            '#<message type="chat" id="xmppfg_xmpp_[^"]+" to="foobar"><body>testmessage</body></message>#',
             $this->object->toString()
         );
     }
@@ -88,12 +88,12 @@ class MessageTest extends TestCase
      * Test constructor.
      *
      * @covers ::__construct
-     * @uses Fabiang\Xmpp\Protocol\Message::getType
-     * @uses Fabiang\Xmpp\Protocol\Message::setType
-     * @uses Fabiang\Xmpp\Protocol\Message::getTo
-     * @uses Fabiang\Xmpp\Protocol\Message::setTo
-     * @uses Fabiang\Xmpp\Protocol\Message::getMessage
-     * @uses Fabiang\Xmpp\Protocol\Message::setMessage
+     * @uses XmppFg\Xmpp\Protocol\Message::getType
+     * @uses XmppFg\Xmpp\Protocol\Message::setType
+     * @uses XmppFg\Xmpp\Protocol\Message::getTo
+     * @uses XmppFg\Xmpp\Protocol\Message::setTo
+     * @uses XmppFg\Xmpp\Protocol\Message::getMessage
+     * @uses XmppFg\Xmpp\Protocol\Message::setMessage
      * @return void
      */
     public function testConstructor()
@@ -113,7 +113,7 @@ class MessageTest extends TestCase
      * @covers ::setTo
      * @covers ::getMessage
      * @covers ::setMessage
-     * @uses Fabiang\Xmpp\Protocol\Message::__construct
+     * @uses XmppFg\Xmpp\Protocol\Message::__construct
      * @return void
      */
     public function testSettersAndGetters()

@@ -34,20 +34,20 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp;
+namespace XmppFg\Xmpp;
 
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Connection\ConnectionInterface;
-use Fabiang\Xmpp\Connection\Socket;
-use Fabiang\Xmpp\Connection\SocketConnectionInterface;
-use Fabiang\Xmpp\Protocol\ProtocolImplementationInterface;
-use Fabiang\Xmpp\Protocol\Message;
-use Fabiang\Xmpp\Protocol\Presence;
-use Fabiang\Xmpp\Event\EventManagerAwareInterface;
-use Fabiang\Xmpp\Event\EventManagerInterface;
-use Fabiang\Xmpp\Event\EventManager;
-use Fabiang\Xmpp\Event\XMLEventInterface;
-use Fabiang\Xmpp\EventListener\Logger;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Connection\ConnectionInterface;
+use XmppFg\Xmpp\Connection\Socket;
+use XmppFg\Xmpp\Connection\SocketConnectionInterface;
+use XmppFg\Xmpp\Protocol\ProtocolImplementationInterface;
+use XmppFg\Xmpp\Protocol\Message;
+use XmppFg\Xmpp\Protocol\Presence;
+use XmppFg\Xmpp\Event\EventManagerAwareInterface;
+use XmppFg\Xmpp\Event\EventManagerInterface;
+use XmppFg\Xmpp\Event\EventManager;
+use XmppFg\Xmpp\Event\XMLEventInterface;
+use XmppFg\Xmpp\EventListener\Logger;
 
 /**
  * Xmpp connection client.

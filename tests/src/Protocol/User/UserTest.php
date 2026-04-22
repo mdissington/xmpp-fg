@@ -1,11 +1,11 @@
 <?php
 
-namespace Fabiang\Xmpp\Protocol\User;
+namespace XmppFg\Xmpp\Protocol\User;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Protocol\User\User::class)]
+#[CoversClass(\XmppFg\Xmpp\Protocol\User\User::class)]
 class UserTest extends TestCase
 {
 
@@ -21,7 +21,7 @@ class UserTest extends TestCase
     }
 
     /**
-     * @covers Fabiang\Xmpp\Protocol\User\User
+     * @covers XmppFg\Xmpp\Protocol\User\User
      * @return void
      */
     public function testSetterAndGetters()

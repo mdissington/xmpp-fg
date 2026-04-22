@@ -34,7 +34,7 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Integration;
+namespace XmppFg\Xmpp\Integration;
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
@@ -64,7 +64,7 @@ class BindContext implements Context
             "<?xml version='1.0'?>"
             . "<stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams'>",
             "<stream:features><bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'/></stream:features>",
-            "<iq id='fabiang_xmpp_1234' type='result'><bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>"
+            "<iq id='xmppfg_xmpp_1234' type='result'><bind xmlns='urn:ietf:params:xml:ns:xmpp-bind'>"
             . "<jid>test@jabber.unister.de/12345678890</jid></bind></iq>"
         ));
     }
@@ -76,7 +76,7 @@ class BindContext implements Context
     {
         $buffer = $this->getConnection()->getBuffer();
         Assert::assertRegExp(
-            '#^<iq type="set" id="fabiang_xmpp_[^"]+">'
+            '#^<iq type="set" id="xmppfg_xmpp_[^"]+">'
             . '<bind xmlns="urn:ietf:params:xml:ns:xmpp-bind">'
             . '<resource></resource></bind></iq>$#',
             $buffer[1]
@@ -93,7 +93,7 @@ class BindContext implements Context
 
     /**
      *
-     * @return \Fabiang\Xmpp\Connection\ConnectionTestDouble
+     * @return \XmppFg\Xmpp\Connection\ConnectionTestDouble
      */
     public function getConnection()
     {

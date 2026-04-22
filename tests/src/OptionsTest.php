@@ -34,14 +34,14 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp;
+namespace XmppFg\Xmpp;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Exception\InvalidArgumentException;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Exception\InvalidArgumentException;
 
-#[CoversClass(\Fabiang\Xmpp\Options::class)]
+#[CoversClass(\XmppFg\Xmpp\Options::class)]
 class OptionsTest extends TestCase
 {
 
@@ -65,9 +65,9 @@ class OptionsTest extends TestCase
      * Test passing addess via constructor.
      *
      * @covers ::__construct
-     * @uses Fabiang\Xmpp\Options::setAddress
-     * @uses Fabiang\Xmpp\Options::getAddress
-     * @uses Fabiang\Xmpp\Options::setTo
+     * @uses XmppFg\Xmpp\Options::setAddress
+     * @uses XmppFg\Xmpp\Options::getAddress
+     * @uses XmppFg\Xmpp\Options::setTo
      * @return void
      */
     public function testConstructor()
@@ -82,7 +82,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::getImplementation
      * @covers ::setImplementation
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetImplementation()
@@ -101,9 +101,9 @@ class OptionsTest extends TestCase
      *
      * @covers ::getAddress
      * @covers ::setAddress
-     * @uses Fabiang\Xmpp\Options::__construct
-     * @uses Fabiang\Xmpp\Options::setTo
-     * @uses Fabiang\Xmpp\Options::getTo
+     * @uses XmppFg\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::setTo
+     * @uses XmppFg\Xmpp\Options::getTo
      * @return void
      */
     public function testSetAndGetAddress()
@@ -125,7 +125,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::getConnection
      * @covers ::setConnection
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetConnection()
@@ -139,7 +139,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::getLogger
      * @covers ::setLogger
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testGetLogger()
@@ -153,7 +153,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::getTo
      * @covers ::setTo
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetTo()
@@ -166,7 +166,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::getUsername
      * @covers ::setUsername
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetUsername()
@@ -194,7 +194,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::getPassword
      * @covers ::setPassword
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetPassword()
@@ -207,7 +207,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::getJid
      * @covers ::setJid
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetJid()
@@ -220,7 +220,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::isAuthenticated
      * @covers ::setAuthenticated
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndIsAuthenticated()
@@ -235,7 +235,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::getUsers
      * @covers ::setUsers
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetUsers()
@@ -247,7 +247,7 @@ class OptionsTest extends TestCase
     /**
      * @covers ::getAuthenticationClasses
      * @covers ::setAuthenticationClasses
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetAuthenticationClasses()
@@ -261,7 +261,7 @@ class OptionsTest extends TestCase
      *
      * @covers ::setTimeout
      * @covers ::getTimeout
-     * @uses Fabiang\Xmpp\Options::__construct
+     * @uses XmppFg\Xmpp\Options::__construct
      * @return void
      */
     public function testSetAndGetTimeout()

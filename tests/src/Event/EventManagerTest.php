@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Event;
+namespace XmppFg\Xmpp\Event;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Event\EventManager::class)]
+#[CoversClass(\XmppFg\Xmpp\Event\EventManager::class)]
 class EventManagerTest extends TestCase
 {
 
@@ -64,8 +64,8 @@ class EventManagerTest extends TestCase
      *
      * @covers ::attach
      * @covers ::getEventList
-     * @uses Fabiang\Xmpp\Event\EventManager::__construct
-     * @uses Fabiang\Xmpp\Event\EventManager::setEventObject
+     * @uses XmppFg\Xmpp\Event\EventManager::__construct
+     * @uses XmppFg\Xmpp\Event\EventManager::setEventObject
      * @return void
      */
     public function testAttach() {
@@ -91,8 +91,8 @@ class EventManagerTest extends TestCase
      *
      * @covers ::attach
      * @covers ::getEventList
-     * @uses Fabiang\Xmpp\Event\EventManager::__construct
-     * @uses Fabiang\Xmpp\Event\EventManager::setEventObject
+     * @uses XmppFg\Xmpp\Event\EventManager::__construct
+     * @uses XmppFg\Xmpp\Event\EventManager::setEventObject
      * @return void
      */
     public function testAttachDuplicates()
@@ -110,11 +110,11 @@ class EventManagerTest extends TestCase
      * Test triggering events.
      *
      * @covers ::trigger
-     * @uses Fabiang\Xmpp\Event\EventManager::__construct
-     * @uses Fabiang\Xmpp\Event\EventManager::attach
-     * @uses Fabiang\Xmpp\Event\EventManager::setEventObject
-     * @uses Fabiang\Xmpp\Event\EventManager::getEventObject
-     * @uses Fabiang\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\EventManager::__construct
+     * @uses XmppFg\Xmpp\Event\EventManager::attach
+     * @uses XmppFg\Xmpp\Event\EventManager::setEventObject
+     * @uses XmppFg\Xmpp\Event\EventManager::getEventObject
+     * @uses XmppFg\Xmpp\Event\Event
      * @return void
      */
     public function testTrigger()
@@ -138,11 +138,11 @@ class EventManagerTest extends TestCase
      * Test triggering wildcard listeners.
      *
      * @covers ::trigger
-     * @uses Fabiang\Xmpp\Event\EventManager::__construct
-     * @uses Fabiang\Xmpp\Event\EventManager::attach
-     * @uses Fabiang\Xmpp\Event\EventManager::setEventObject
-     * @uses Fabiang\Xmpp\Event\EventManager::getEventObject
-     * @uses Fabiang\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\EventManager::__construct
+     * @uses XmppFg\Xmpp\Event\EventManager::attach
+     * @uses XmppFg\Xmpp\Event\EventManager::setEventObject
+     * @uses XmppFg\Xmpp\Event\EventManager::getEventObject
+     * @uses XmppFg\Xmpp\Event\Event
      * @return void
      */
     public function testTriggerWildcard()
@@ -159,9 +159,9 @@ class EventManagerTest extends TestCase
      * Test triggering events.
      *
      * @covers ::trigger
-     * @uses Fabiang\Xmpp\Event\EventManager::__construct
-     * @uses Fabiang\Xmpp\Event\EventManager::attach
-     * @uses Fabiang\Xmpp\Event\EventManager::setEventObject
+     * @uses XmppFg\Xmpp\Event\EventManager::__construct
+     * @uses XmppFg\Xmpp\Event\EventManager::attach
+     * @uses XmppFg\Xmpp\Event\EventManager::setEventObject
      * @return void
      */
     public function testTriggerNoCallbacksAttached()
@@ -180,7 +180,7 @@ class EventManagerTest extends TestCase
      *
      * @covers ::getEventObject
      * @covers ::setEventObject
-     * @uses Fabiang\Xmpp\Event\EventManager::__construct
+     * @uses XmppFg\Xmpp\Event\EventManager::__construct
      * @return void
      */
     public function testSetAndGetEventObject()
@@ -193,14 +193,14 @@ class EventManagerTest extends TestCase
      * Test constructor.
      *
      * @covers ::__construct
-     * @uses Fabiang\Xmpp\Event\EventManager::getEventObject
-     * @uses Fabiang\Xmpp\Event\EventManager::setEventObject
+     * @uses XmppFg\Xmpp\Event\EventManager::getEventObject
+     * @uses XmppFg\Xmpp\Event\EventManager::setEventObject
      * @return void
      */
     public function testConstructor()
     {
         $object = new EventManager;
-        $this->assertInstanceOf('\\Fabiang\\Xmpp\\Event\\Event', $object->getEventObject());
+        $this->assertInstanceOf(\XmppFg\Xmpp\Event\Event::class, $object->getEventObject());
 
         $eventObject = new Event;
         $object      = new EventManager($eventObject);

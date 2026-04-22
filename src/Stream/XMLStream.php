@@ -34,14 +34,14 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Stream;
+namespace XmppFg\Xmpp\Stream;
 
-use Fabiang\Xmpp\Event\EventManagerAwareInterface;
-use Fabiang\Xmpp\Event\EventManagerInterface;
-use Fabiang\Xmpp\Event\EventManager;
-use Fabiang\Xmpp\Event\XMLEvent;
-use Fabiang\Xmpp\Event\XMLEventInterface;
-use Fabiang\Xmpp\Exception\XMLParserException;
+use XmppFg\Xmpp\Event\EventManagerAwareInterface;
+use XmppFg\Xmpp\Event\EventManagerInterface;
+use XmppFg\Xmpp\Event\EventManager;
+use XmppFg\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Event\XMLEventInterface;
+use XmppFg\Xmpp\Exception\XMLParserException;
 
 /**
  * Xml stream class.

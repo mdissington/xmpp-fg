@@ -34,13 +34,13 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Stream;
+namespace XmppFg\Xmpp\Stream;
 
-use Fabiang\Xmpp\Event\XMLEventInterface;
+use XmppFg\Xmpp\Event\XMLEventInterface;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Stream\XMLStream::class)]
+#[CoversClass(\XmppFg\Xmpp\Stream\XMLStream::class)]
 class XMLStreamTest extends TestCase
 {
 
@@ -59,22 +59,22 @@ class XMLStreamTest extends TestCase
     /**
      * Test parsing xml.
      *
-     * @covers Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::__construct
-     * @uses Fabiang\Xmpp\Stream\XMLStream::clearDocument
-     * @uses Fabiang\Xmpp\Stream\XMLStream::startXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::createAttributeNodes
-     * @uses Fabiang\Xmpp\Stream\XMLStream::endXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::dataXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::cacheEvent
-     * @uses Fabiang\Xmpp\Stream\XMLStream::trigger
-     * @uses Fabiang\Xmpp\Stream\XMLStream::reset
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::setEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventObject
+     * @covers XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::__construct
+     * @uses XmppFg\Xmpp\Stream\XMLStream::clearDocument
+     * @uses XmppFg\Xmpp\Stream\XMLStream::startXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::createAttributeNodes
+     * @uses XmppFg\Xmpp\Stream\XMLStream::endXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::dataXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::cacheEvent
+     * @uses XmppFg\Xmpp\Stream\XMLStream::trigger
+     * @uses XmppFg\Xmpp\Stream\XMLStream::reset
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::setEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventObject
      * @return void
      */
     public function testParse()
@@ -129,21 +129,21 @@ class XMLStreamTest extends TestCase
      * Test parsing xml if xml stream is finished.
      *
      * @covers ::parse
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::__construct
-     * @uses Fabiang\Xmpp\Stream\XMLStream::clearDocument
-     * @uses Fabiang\Xmpp\Stream\XMLStream::startXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::createAttributeNodes
-     * @uses Fabiang\Xmpp\Stream\XMLStream::endXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::dataXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::cacheEvent
-     * @uses Fabiang\Xmpp\Stream\XMLStream::trigger
-     * @uses Fabiang\Xmpp\Stream\XMLStream::reset
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::setEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventObject
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::__construct
+     * @uses XmppFg\Xmpp\Stream\XMLStream::clearDocument
+     * @uses XmppFg\Xmpp\Stream\XMLStream::startXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::createAttributeNodes
+     * @uses XmppFg\Xmpp\Stream\XMLStream::endXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::dataXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::cacheEvent
+     * @uses XmppFg\Xmpp\Stream\XMLStream::trigger
+     * @uses XmppFg\Xmpp\Stream\XMLStream::reset
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::setEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventObject
      * @return void
      */
     public function testParseFinalEndTag()
@@ -175,21 +175,21 @@ class XMLStreamTest extends TestCase
      *
      * @covers ::parse
      * @covers ::clearDocument
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::__construct
-     * @uses Fabiang\Xmpp\Stream\XMLStream::clearDocument
-     * @uses Fabiang\Xmpp\Stream\XMLStream::startXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::createAttributeNodes
-     * @uses Fabiang\Xmpp\Stream\XMLStream::endXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::dataXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::cacheEvent
-     * @uses Fabiang\Xmpp\Stream\XMLStream::trigger
-     * @uses Fabiang\Xmpp\Stream\XMLStream::reset
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::setEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventObject
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::__construct
+     * @uses XmppFg\Xmpp\Stream\XMLStream::clearDocument
+     * @uses XmppFg\Xmpp\Stream\XMLStream::startXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::createAttributeNodes
+     * @uses XmppFg\Xmpp\Stream\XMLStream::endXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::dataXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::cacheEvent
+     * @uses XmppFg\Xmpp\Stream\XMLStream::trigger
+     * @uses XmppFg\Xmpp\Stream\XMLStream::reset
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::setEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventObject
      * @return void
      */
     public function testParseChallenge()
@@ -218,21 +218,21 @@ class XMLStreamTest extends TestCase
      * Test parsing with namespaces.
      *
      * @covers ::parse
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::__construct
-     * @uses Fabiang\Xmpp\Stream\XMLStream::clearDocument
-     * @uses Fabiang\Xmpp\Stream\XMLStream::startXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::createAttributeNodes
-     * @uses Fabiang\Xmpp\Stream\XMLStream::endXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::dataXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::cacheEvent
-     * @uses Fabiang\Xmpp\Stream\XMLStream::trigger
-     * @uses Fabiang\Xmpp\Stream\XMLStream::reset
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::setEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventObject
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::__construct
+     * @uses XmppFg\Xmpp\Stream\XMLStream::clearDocument
+     * @uses XmppFg\Xmpp\Stream\XMLStream::startXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::createAttributeNodes
+     * @uses XmppFg\Xmpp\Stream\XMLStream::endXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::dataXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::cacheEvent
+     * @uses XmppFg\Xmpp\Stream\XMLStream::trigger
+     * @uses XmppFg\Xmpp\Stream\XMLStream::reset
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::setEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventObject
      * @return void
      */
     public function testParseNamespaces()
@@ -272,15 +272,15 @@ class XMLStreamTest extends TestCase
      * Test parsing invalid XML.
      *
      * @covers ::parse
-     * @uses Fabiang\Xmpp\Exception\XMLParserException
-     * @uses Fabiang\Xmpp\Stream\XMLStream::__construct
-     * @uses Fabiang\Xmpp\Stream\XMLStream::clearDocument
-     * @uses Fabiang\Xmpp\Stream\XMLStream::reset
+     * @uses XmppFg\Xmpp\Exception\XMLParserException
+     * @uses XmppFg\Xmpp\Stream\XMLStream::__construct
+     * @uses XmppFg\Xmpp\Stream\XMLStream::clearDocument
+     * @uses XmppFg\Xmpp\Stream\XMLStream::reset
      * @return void
      */
     public function testParseInvalidXml()
     {
-        $this->expectException(\Fabiang\Xmpp\Exception\XMLParserException::class);
+        $this->expectException(\XmppFg\Xmpp\Exception\XMLParserException::class);
         $this->object->parse('<tsst<>');
     }
 
@@ -289,19 +289,19 @@ class XMLStreamTest extends TestCase
      *
      * @covers ::parse
      * @covers ::endXml
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::__construct
-     * @uses Fabiang\Xmpp\Stream\XMLStream::clearDocument
-     * @uses Fabiang\Xmpp\Stream\XMLStream::startXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::createAttributeNodes
-     * @uses Fabiang\Xmpp\Stream\XMLStream::cacheEvent
-     * @uses Fabiang\Xmpp\Stream\XMLStream::trigger
-     * @uses Fabiang\Xmpp\Stream\XMLStream::reset
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::setEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventObject
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::__construct
+     * @uses XmppFg\Xmpp\Stream\XMLStream::clearDocument
+     * @uses XmppFg\Xmpp\Stream\XMLStream::startXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::createAttributeNodes
+     * @uses XmppFg\Xmpp\Stream\XMLStream::cacheEvent
+     * @uses XmppFg\Xmpp\Stream\XMLStream::trigger
+     * @uses XmppFg\Xmpp\Stream\XMLStream::reset
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::setEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventObject
      * @return void
      */
     public function testParseNamespaceCache()
@@ -335,16 +335,16 @@ class XMLStreamTest extends TestCase
      *
      * @covers ::getEventManager
      * @covers ::setEventManager
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::__construct
-     * @uses Fabiang\Xmpp\Stream\XMLStream::reset
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventObject
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::__construct
+     * @uses XmppFg\Xmpp\Stream\XMLStream::reset
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventObject
      * @return void
      */
     public function testSetAndGetEventManager()
     {
-        $this->assertInstanceOf('\Fabiang\Xmpp\Event\EventManager', $this->object->getEventManager());
-        $eventManager = $this->getMockBuilder('\Fabiang\Xmpp\Event\EventManager')
+        $this->assertInstanceOf('\XmppFg\Xmpp\Event\EventManager', $this->object->getEventManager());
+        $eventManager = $this->getMockBuilder('\XmppFg\Xmpp\Event\EventManager')
             ->disableOriginalConstructor()
             ->getMock();
         $this->assertSame($eventManager, $this->object->setEventManager($eventManager)->getEventManager());
@@ -352,20 +352,20 @@ class XMLStreamTest extends TestCase
 
     /**
      * @covers ::parse
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::__construct
-     * @uses Fabiang\Xmpp\Stream\XMLStream::clearDocument
-     * @uses Fabiang\Xmpp\Stream\XMLStream::startXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::endXml
-     * @uses Fabiang\Xmpp\Stream\XMLStream::createAttributeNodes
-     * @uses Fabiang\Xmpp\Stream\XMLStream::cacheEvent
-     * @uses Fabiang\Xmpp\Stream\XMLStream::trigger
-     * @uses Fabiang\Xmpp\Stream\XMLStream::reset
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::setEventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream::getEventObject
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::__construct
+     * @uses XmppFg\Xmpp\Stream\XMLStream::clearDocument
+     * @uses XmppFg\Xmpp\Stream\XMLStream::startXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::endXml
+     * @uses XmppFg\Xmpp\Stream\XMLStream::createAttributeNodes
+     * @uses XmppFg\Xmpp\Stream\XMLStream::cacheEvent
+     * @uses XmppFg\Xmpp\Stream\XMLStream::trigger
+     * @uses XmppFg\Xmpp\Stream\XMLStream::reset
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::setEventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream::getEventObject
      */
     public function testParseCutted()
     {

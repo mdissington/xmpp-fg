@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp;
+namespace XmppFg\Xmpp;
 
-use Fabiang\Xmpp\Connection\ConnectionInterface;
-use Fabiang\Xmpp\Exception\InvalidArgumentException;
-use Fabiang\Xmpp\Protocol\ImplementationInterface;
-use Fabiang\Xmpp\Protocol\DefaultImplementation;
+use XmppFg\Xmpp\Connection\ConnectionInterface;
+use XmppFg\Xmpp\Exception\InvalidArgumentException;
+use XmppFg\Xmpp\Protocol\ImplementationInterface;
+use XmppFg\Xmpp\Protocol\DefaultImplementation;
 use Psr\Log\LoggerInterface;
 
 /**
@@ -62,7 +62,7 @@ class Options
     protected bool $authenticated              = false;
 
     /**
-     * @var array<\Fabiang\Xmpp\Protocol\User\User>
+     * @var array<\XmppFg\Xmpp\Protocol\User\User>
      */
     protected array $users = [];
 
@@ -82,12 +82,12 @@ class Options
      * @var array<string,string>
      */
     protected $authenticationClasses = [
-        'anonymous'     => \Fabiang\Xmpp\EventListener\Stream\Authentication\Anonymous::class,
-        'digest-md5'    => \Fabiang\Xmpp\EventListener\Stream\Authentication\DigestMd5::class,
-        'plain'         => \Fabiang\Xmpp\EventListener\Stream\Authentication\Plain::class,
-        'scram-sha-1'   => \Fabiang\Xmpp\EventListener\Stream\Authentication\ScramSha1::class,
-        'scram-sha-256' => \Fabiang\Xmpp\EventListener\Stream\Authentication\ScramSha256::class,
-        'scram-sha-512' => \Fabiang\Xmpp\EventListener\Stream\Authentication\ScramSha512::class,
+        'anonymous'     => \XmppFg\Xmpp\EventListener\Stream\Authentication\Anonymous::class,
+        'digest-md5'    => \XmppFg\Xmpp\EventListener\Stream\Authentication\DigestMd5::class,
+        'plain'         => \XmppFg\Xmpp\EventListener\Stream\Authentication\Plain::class,
+        'scram-sha-1'   => \XmppFg\Xmpp\EventListener\Stream\Authentication\ScramSha1::class,
+        'scram-sha-256' => \XmppFg\Xmpp\EventListener\Stream\Authentication\ScramSha256::class,
+        'scram-sha-512' => \XmppFg\Xmpp\EventListener\Stream\Authentication\ScramSha512::class,
     ];
 
     /**
@@ -310,7 +310,7 @@ class Options
 
     /**
      * Get users list
-     * @return array<\Fabiang\Xmpp\Protocol\User\User>
+     * @return array<\XmppFg\Xmpp\Protocol\User\User>
      * @codeCoverageIgnore
      */
     public function getUsers(): array
@@ -320,7 +320,7 @@ class Options
 
     /**
      * Set users list
-     * @param array<\Fabiang\Xmpp\Protocol\User\User> $users
+     * @param array<\XmppFg\Xmpp\Protocol\User\User> $users
      * @return $this
      * @codeCoverageIgnore
      */

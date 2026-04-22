@@ -34,16 +34,16 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream;
+namespace XmppFg\Xmpp\EventListener\Stream;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Event\XMLEvent;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Protocol\User\User;
+use XmppFg\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Protocol\User\User;
 
-#[CoversClass(\Fabiang\Xmpp\EventListener\Stream\Roster::class)]
+#[CoversClass(\XmppFg\Xmpp\EventListener\Stream\Roster::class)]
 class RosterTest extends TestCase
 {
 
@@ -77,11 +77,11 @@ class RosterTest extends TestCase
      * Test attaching events.
      *
      * @covers ::attachEvents
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
      * @return void
      */
     public function testAttachEvents()
@@ -99,9 +99,9 @@ class RosterTest extends TestCase
      *
      * @covers ::query
      * @covers ::isBlocking
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testQuery()
@@ -115,18 +115,18 @@ class RosterTest extends TestCase
      * Test parsing result.
      *
      * @covers ::result
-     * @uses Fabiang\Xmpp\EventListener\Stream\Roster::query
-     * @uses Fabiang\Xmpp\EventListener\Stream\Roster::getUserObject
-     * @uses Fabiang\Xmpp\EventListener\Stream\Roster::setUserObject
-     * @uses Fabiang\Xmpp\EventListener\Stream\Roster::isBlocking
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Protocol\User\User
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\EventListener\Stream\Roster::query
+     * @uses XmppFg\Xmpp\EventListener\Stream\Roster::getUserObject
+     * @uses XmppFg\Xmpp\EventListener\Stream\Roster::setUserObject
+     * @uses XmppFg\Xmpp\EventListener\Stream\Roster::isBlocking
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Protocol\User\User
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\Event
      * @return void
      */
     public function testResult()
@@ -166,14 +166,14 @@ class RosterTest extends TestCase
      *
      * @covers ::setUserObject
      * @covers ::getUserObject
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testSetAndGetUserObject()
     {
-        $this->assertInstanceOf('\Fabiang\Xmpp\Protocol\User\User', $this->object->getUserObject());
+        $this->assertInstanceOf(User::class, $this->object->getUserObject());
         $userObject = new User;
         $this->assertSame($userObject, $this->object->setUserObject($userObject)->getUserObject());
     }

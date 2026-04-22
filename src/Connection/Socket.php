@@ -34,15 +34,15 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Connection;
+namespace XmppFg\Xmpp\Connection;
 
-use Fabiang\Xmpp\Exception\SocketException;
-use Fabiang\Xmpp\Exception\TimeoutException;
-use Fabiang\Xmpp\Exception\Stream\StreamErrorException;
-use Fabiang\Xmpp\Stream\SocketClient;
-use Fabiang\Xmpp\Stream\SocksProxy;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Util\XML;
+use XmppFg\Xmpp\Exception\SocketException;
+use XmppFg\Xmpp\Exception\TimeoutException;
+use XmppFg\Xmpp\Exception\Stream\StreamErrorException;
+use XmppFg\Xmpp\Stream\SocketClient;
+use XmppFg\Xmpp\Stream\SocksProxy;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Util\XML;
 
 /**
  * Connection to a socket stream.
@@ -88,8 +88,8 @@ class Socket extends AbstractConnection implements SocketConnectionInterface
     /**
      * @throws SocketException
      * @throws StreamErrorException
-     * @throws \Fabiang\Xmpp\Exception\ErrorException
-     * @throws \Fabiang\Xmpp\Exception\XMLParserException
+     * @throws \XmppFg\Xmpp\Exception\ErrorException
+     * @throws \XmppFg\Xmpp\Exception\XMLParserException
      */
     #[\Override]
     public function receive(): string
@@ -131,7 +131,7 @@ class Socket extends AbstractConnection implements SocketConnectionInterface
 
     /**
      * Try to reconnect via TLS if connecting via TCP failed
-     * @throws \Fabiang\Xmpp\Exception\ErrorException
+     * @throws \XmppFg\Xmpp\Exception\ErrorException
      */
     private function reconnectTls(): void
     {
@@ -156,8 +156,8 @@ class Socket extends AbstractConnection implements SocketConnectionInterface
     /**
      * @throws SocketException
      * @throws StreamErrorException
-     * @throws \Fabiang\Xmpp\Exception\ErrorException
-     * @throws \Fabiang\Xmpp\Exception\XMLParserException
+     * @throws \XmppFg\Xmpp\Exception\ErrorException
+     * @throws \XmppFg\Xmpp\Exception\XMLParserException
      */
     #[\Override]
     public function send($buffer): void
@@ -189,7 +189,7 @@ class Socket extends AbstractConnection implements SocketConnectionInterface
     }
 
     /**
-     * @throws \Fabiang\Xmpp\Exception\ErrorException
+     * @throws \XmppFg\Xmpp\Exception\ErrorException
      */
     #[\Override]
     public function connect(): void

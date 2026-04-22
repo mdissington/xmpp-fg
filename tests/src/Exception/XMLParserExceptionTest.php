@@ -34,19 +34,19 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Exception;
+namespace XmppFg\Xmpp\Exception;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Exception\XMLParserException::class)]
+#[CoversClass(\XmppFg\Xmpp\Exception\XMLParserException::class)]
 class XMLParserExceptionTest extends TestCase
 {
 
     /**
      * Test creation of exception.
      *
-     * @covers Fabiang\Xmpp\Exception\XMLParserException::create
+     * @covers XmppFg\Xmpp\Exception\XMLParserException::create
      * @return void
      */
     public function testCreate()
@@ -61,24 +61,24 @@ class XMLParserExceptionTest extends TestCase
     /**
      * Test if no resource instance is given.
      *
-     * @covers Fabiang\Xmpp\Exception\XMLParserException::create
+     * @covers XmppFg\Xmpp\Exception\XMLParserException::create
      * @return void
      */
     public function testCreateNoResourceInstance()
     {
-        $this->expectException(\Fabiang\Xmpp\Exception\InvalidArgumentException::class);
+        $this->expectException(\XmppFg\Xmpp\Exception\InvalidArgumentException::class);
         XMLParserException::create('test');
     }
 
     /**
      * Test if resource is no xml parser instance.
      *
-     * @covers Fabiang\Xmpp\Exception\XMLParserException::create
+     * @covers XmppFg\Xmpp\Exception\XMLParserException::create
      * @return void
      */
     public function testCreateNoXmlResourceInstance()
     {
-        $this->expectException(\Fabiang\Xmpp\Exception\InvalidArgumentException::class);
+        $this->expectException(\XmppFg\Xmpp\Exception\InvalidArgumentException::class);
         $handle = fopen('php://memory', 'r');
         try {
             XMLParserException::create($handle);

@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Stream;
+namespace XmppFg\Xmpp\Stream;
 
-use Fabiang\Xmpp\Exception\ErrorException;
-use Fabiang\Xmpp\Exception\InvalidArgumentException;
-use Fabiang\Xmpp\Exception\SocketException;
-use Fabiang\Xmpp\Util\ErrorHandler;
+use XmppFg\Xmpp\Exception\ErrorException;
+use XmppFg\Xmpp\Exception\InvalidArgumentException;
+use XmppFg\Xmpp\Exception\SocketException;
+use XmppFg\Xmpp\Util\ErrorHandler;
 
 /**
  * Stream functions wrapper class.

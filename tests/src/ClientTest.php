@@ -34,17 +34,17 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp;
+namespace XmppFg\Xmpp;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\CoversClass;
-use Fabiang\Xmpp\Connection\ConnectionInterface;
-use Fabiang\Xmpp\Event\EventManagerInterface;
-use Fabiang\Xmpp\Protocol\ImplementationInterface;
-use Fabiang\Xmpp\EventListener\Logger;
-use Fabiang\Xmpp\Stream\XMLStream;
+use XmppFg\Xmpp\Connection\ConnectionInterface;
+use XmppFg\Xmpp\Event\EventManagerInterface;
+use XmppFg\Xmpp\Protocol\ImplementationInterface;
+use XmppFg\Xmpp\EventListener\Logger;
+use XmppFg\Xmpp\Stream\XMLStream;
 
-#[CoversClass(\Fabiang\Xmpp\Client::class)]
+#[CoversClass(\XmppFg\Xmpp\Client::class)]
 class ClientTest extends TestCase
 {
 
@@ -97,9 +97,9 @@ class ClientTest extends TestCase
      *
      * @covers ::__construct
      * @covers ::setupImplementation
-     * @uses Fabiang\Xmpp\Client::getEventManager
-     * @uses Fabiang\Xmpp\Client::setEventManager
-     * @uses Fabiang\Xmpp\Client::getOptions
+     * @uses XmppFg\Xmpp\Client::getEventManager
+     * @uses XmppFg\Xmpp\Client::setEventManager
+     * @uses XmppFg\Xmpp\Client::getOptions
      */
     public function testConstructor()
     {
@@ -134,15 +134,15 @@ class ClientTest extends TestCase
     /**
      * @covers ::__construct
      * @covers ::getConnection
-     * @uses Fabiang\Xmpp\Client::setupImplementation
-     * @uses Fabiang\Xmpp\Client::getEventManager
-     * @uses Fabiang\Xmpp\Stream\SocketClient::__construct
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection::setEventManager
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection::setOptions
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::factory
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Event\EventManager::__construct
+     * @uses XmppFg\Xmpp\Client::setupImplementation
+     * @uses XmppFg\Xmpp\Client::getEventManager
+     * @uses XmppFg\Xmpp\Stream\SocketClient::__construct
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection::setEventManager
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection::setOptions
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::factory
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Event\EventManager::__construct
      */
     public function testConstructorCreatingDefaults()
     {
@@ -161,8 +161,8 @@ class ClientTest extends TestCase
      * Test connection.
      *
      * @covers ::connect
-     * @uses Fabiang\Xmpp\Client::__construct
-     * @uses Fabiang\Xmpp\Client::setupImplementation
+     * @uses XmppFg\Xmpp\Client::__construct
+     * @uses XmppFg\Xmpp\Client::setupImplementation
      */
     public function testConnect()
     {
@@ -176,8 +176,8 @@ class ClientTest extends TestCase
      * Test disconnecting.
      *
      * @covers ::disconnect
-     * @uses Fabiang\Xmpp\Client::__construct
-     * @uses Fabiang\Xmpp\Client::setUpImplementation
+     * @uses XmppFg\Xmpp\Client::__construct
+     * @uses XmppFg\Xmpp\Client::setUpImplementation
      */
     public function testDisconnect()
     {
@@ -191,8 +191,8 @@ class ClientTest extends TestCase
      * Test sending data.
      *
      * @covers ::send
-     * @uses Fabiang\Xmpp\Client::__construct
-     * @uses Fabiang\Xmpp\Client::setUpImplementation
+     * @uses XmppFg\Xmpp\Client::__construct
+     * @uses XmppFg\Xmpp\Client::setUpImplementation
      */
     public function testSend()
     {
@@ -213,8 +213,8 @@ class ClientTest extends TestCase
      *
      * @covers ::getEventManager
      * @covers ::setEventManager
-     * @uses Fabiang\Xmpp\Client::__construct
-     * @uses Fabiang\Xmpp\Client::setUpImplementation
+     * @uses XmppFg\Xmpp\Client::__construct
+     * @uses XmppFg\Xmpp\Client::setUpImplementation
      */
     public function testSetAndGetEventManager()
     {
@@ -226,8 +226,8 @@ class ClientTest extends TestCase
      * Test getting options object.
      *
      * @covers ::getOptions
-     * @uses Fabiang\Xmpp\Client::__construct
-     * @uses Fabiang\Xmpp\Client::setUpImplementation
+     * @uses XmppFg\Xmpp\Client::__construct
+     * @uses XmppFg\Xmpp\Client::setUpImplementation
      */
     public function testGetOptions()
     {
@@ -238,10 +238,10 @@ class ClientTest extends TestCase
      * Test setter Option Connection in Client constructor
      *
      * @covers ::__construct
-     * @uses Fabiang\Xmpp\Client::__construct
-     * @uses Fabiang\Xmpp\Client::getOptions
-     * @uses Fabiang\Xmpp\Client::setUpImplementation
-     * @uses Fabiang\Xmpp\Options::getConnection
+     * @uses XmppFg\Xmpp\Client::__construct
+     * @uses XmppFg\Xmpp\Client::getOptions
+     * @uses XmppFg\Xmpp\Client::setUpImplementation
+     * @uses XmppFg\Xmpp\Options::getConnection
      */
     public function testOptionsConnection()
     {

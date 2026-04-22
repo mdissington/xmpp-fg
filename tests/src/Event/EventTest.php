@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Event;
+namespace XmppFg\Xmpp\Event;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Event\Event::class)]
+#[CoversClass(\XmppFg\Xmpp\Event\Event::class)]
 class EventTest extends TestCase
 {
 
@@ -114,8 +114,8 @@ class EventTest extends TestCase
      * Test getting parameter by index.
      *
      * @covers ::getParameter
-     * @uses Fabiang\Xmpp\Event\Event::getParameters
-     * @uses Fabiang\Xmpp\Event\Event::setParameters
+     * @uses XmppFg\Xmpp\Event\Event::getParameters
+     * @uses XmppFg\Xmpp\Event\Event::setParameters
      * @return void
      */
     public function testGetParameter()
@@ -130,12 +130,12 @@ class EventTest extends TestCase
      * Test getting parameter by missing index.
      *
      * @covers ::getParameter
-     * @uses Fabiang\Xmpp\Event\Event::getParameters
+     * @uses XmppFg\Xmpp\Event\Event::getParameters
      * @return void
      */
     public function testGetParameterNotSet()
     {
-        $this->expectException(\Fabiang\Xmpp\Exception\OutOfRangeException::class);
+        $this->expectException(\XmppFg\Xmpp\Exception\OutOfRangeException::class);
         $this->object->getParameter(0);
     }
 }

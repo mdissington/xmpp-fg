@@ -34,17 +34,17 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener;
+namespace XmppFg\Xmpp\EventListener;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Monolog\Logger as MonologLogger;
 use Monolog\Handler\TestHandler;
-use Fabiang\Xmpp\Event\Event;
-use Fabiang\Xmpp\Event\EventManagerInterface;
-use Fabiang\Xmpp\Options;
+use XmppFg\Xmpp\Event\Event;
+use XmppFg\Xmpp\Event\EventManagerInterface;
+use XmppFg\Xmpp\Options;
 
-#[CoversClass(\Fabiang\Xmpp\EventListener\Logger::class)]
+#[CoversClass(\XmppFg\Xmpp\EventListener\Logger::class)]
 class LoggerTest extends TestCase
 {
 
@@ -82,8 +82,8 @@ class LoggerTest extends TestCase
      * @covers ::event
      * @covers ::getOptions
      * @covers ::setOptions
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Options
      */
     public function testEvent(): void
     {
@@ -94,11 +94,11 @@ class LoggerTest extends TestCase
     }
 
     /**
-     * Test \Fabiang\Xmpp\EventListener\Logger->attachEvents() attaches \Fabiang\Xmpp\EventListener\Logger->event() to the 'logger' event
+     * Test \XmppFg\Xmpp\EventListener\Logger->attachEvents() attaches \XmppFg\Xmpp\EventListener\Logger->event() to the 'logger' event
      * @covers ::attachEvents
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
      */
     public function testAttachEvents(): void
     {
@@ -129,9 +129,9 @@ class LoggerTest extends TestCase
     /**
      * @covers ::getEventManager
      * @covers ::setEventManager
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
      */
     public function testSetAndGetEventManager()
     {

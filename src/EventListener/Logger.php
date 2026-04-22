@@ -34,9 +34,9 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener;
+namespace XmppFg\Xmpp\EventListener;
 
-use Fabiang\Xmpp\Event\EventInterface;
+use XmppFg\Xmpp\Event\EventInterface;
 
 /**
  * Event listener for logging events.
@@ -49,7 +49,7 @@ class Logger extends AbstractEventListener
     /**
      * Log event.
      *
-     * @param \Fabiang\Xmpp\Event\EventInterface $event
+     * @param EventInterface $event
      * @return $this
      */
     public function event(EventInterface $event): self

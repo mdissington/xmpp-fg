@@ -34,15 +34,15 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream;
+namespace XmppFg\Xmpp\EventListener\Stream;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Event\XMLEvent;
 
-#[CoversClass(\Fabiang\Xmpp\EventListener\Stream\Bind::class)]
+#[CoversClass(\XmppFg\Xmpp\EventListener\Stream\Bind::class)]
 class BindTest extends TestCase
 {
 
@@ -80,13 +80,13 @@ class BindTest extends TestCase
      * Test attaching events.
      *
      * @covers ::attachEvents
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
      * @return void
      */
     public function testAttachEvents()
@@ -120,15 +120,15 @@ class BindTest extends TestCase
      * Test handling bind event.
      *
      * @covers ::bindFeatures
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\EventListener\Stream\AbstractSessionEvent
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\EventListener\Stream\AbstractSessionEvent
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
      * @return void
      */
     public function testBind()
@@ -155,15 +155,15 @@ class BindTest extends TestCase
      * Test handling jid event.
      *
      * @covers ::jid
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
-     * @uses Fabiang\Xmpp\EventListener\Stream\AbstractSessionEvent
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\EventListener\Stream\AbstractSessionEvent
      * @depends testBind
      * @return void
      */

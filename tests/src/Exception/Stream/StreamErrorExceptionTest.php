@@ -34,13 +34,13 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Exception\Stream;
+namespace XmppFg\Xmpp\Exception\Stream;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Event\XMLEvent;
 
-#[CoversClass(\Fabiang\Xmpp\Exception\Stream\StreamErrorException::class)]
+#[CoversClass(\XmppFg\Xmpp\Exception\Stream\StreamErrorException::class)]
 class StreamErrorExceptionTest extends TestCase
 {
 
@@ -48,9 +48,9 @@ class StreamErrorExceptionTest extends TestCase
      * Test create exception from XMLEvent.
      *
      * @covers ::createFromEvent
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Exception\Stream\StreamErrorException::getContent
-     * @uses Fabiang\Xmpp\Exception\Stream\StreamErrorException::setContent
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Exception\Stream\StreamErrorException::getContent
+     * @uses XmppFg\Xmpp\Exception\Stream\StreamErrorException::setContent
      * @return void
      */
     public function testCreateFromEventGeneric()
@@ -70,9 +70,9 @@ class StreamErrorExceptionTest extends TestCase
      * Test create exception from XMLEvent.
      *
      * @covers ::createFromEvent
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Exception\Stream\StreamErrorException::getContent
-     * @uses Fabiang\Xmpp\Exception\Stream\StreamErrorException::setContent
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Exception\Stream\StreamErrorException::getContent
+     * @uses XmppFg\Xmpp\Exception\Stream\StreamErrorException::setContent
      * @return void
      */
     public function testCreateFromEventNamed()

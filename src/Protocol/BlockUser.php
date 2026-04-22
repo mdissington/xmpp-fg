@@ -34,9 +34,9 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Protocol;
+namespace XmppFg\Xmpp\Protocol;
 
-use Fabiang\Xmpp\Util\XML;
+use XmppFg\Xmpp\Util\XML;
 
 /**
  * Protocol setting for Xmpp.

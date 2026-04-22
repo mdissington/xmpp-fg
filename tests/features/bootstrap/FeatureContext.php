@@ -31,17 +31,17 @@
  * @author    Fabian Grutschus <f.grutschus@lubyte.de>
  * @copyright 2014 Fabian Grutschus. All rights reserved.
  * @license   BSD
- * @link      http://github.com/fabiang/xmpp
+ * @link      http://github.com/XmppFg/xmpp
  */
 
-namespace Fabiang\Xmpp\Integration;
+namespace XmppFg\Xmpp\Integration;
 
 use Behat\Behat\Context\Context;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Client;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Connection\Socket;
-use Fabiang\Xmpp\Stream\SocketClient;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Client;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Connection\Socket;
+use XmppFg\Xmpp\Stream\SocketClient;
 use PHPUnit\Framework\Assert;
 
 /**
@@ -216,7 +216,7 @@ class FeatureContext implements Context
      */
     public function timeoutExceptionShouldHaveThrown()
     {
-        Assert::assertInstanceOf('\\Fabiang\\Xmpp\\Exception\\TimeoutException', $this->exception);
+        Assert::assertInstanceOf(\XmppFg\Xmpp\Exception\TimeoutException::class, $this->exception);
     }
 
     /**
@@ -224,7 +224,7 @@ class FeatureContext implements Context
      */
     public function socketExceptionShouldHaveBeenThrown()
     {
-        Assert::assertInstanceOf('\\Fabiang\\Xmpp\\Exception\\ErrorException', $this->exception);
+        Assert::assertInstanceOf(\XmppFg\Xmpp\Exception\ErrorException::class, $this->exception);
     }
 
     /**

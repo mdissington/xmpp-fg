@@ -34,13 +34,13 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Util;
+namespace XmppFg\Xmpp\Util;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Exception\ErrorException;
+use XmppFg\Xmpp\Exception\ErrorException;
 
-#[CoversClass(\Fabiang\Xmpp\Util\ErrorHandler::class)]
+#[CoversClass(\XmppFg\Xmpp\Util\ErrorHandler::class)]
 class ErrorHandlerTest extends TestCase
 {
 

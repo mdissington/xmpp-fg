@@ -34,11 +34,11 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Integration;
+namespace XmppFg\Xmpp\Integration;
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
-use Fabiang\Xmpp\Util\XML;
+use XmppFg\Xmpp\Util\XML;
 use PHPUnit\Framework\Assert;
 
 class AuthenticationContext implements Context
@@ -150,7 +150,7 @@ class AuthenticationContext implements Context
     {
         /* @var $exception \Exception */
         $exception = $this->getMainContext()->exception;
-        Assert::assertInstanceOf('\Fabiang\Xmpp\Exception\Stream\AuthenticationErrorException', $exception);
+        Assert::assertInstanceOf(\XmppFg\Xmpp\Exception\Stream\AuthenticationErrorException::class, $exception);
         Assert::assertSame('Stream Error: "not-authorized"', $exception->getMessage());
     }
 
@@ -174,7 +174,7 @@ class AuthenticationContext implements Context
 
     /**
      *
-     * @return \Fabiang\Xmpp\Connection\ConnectionTestDouble
+     * @return \XmppFg\Xmpp\Connection\ConnectionTestDouble
      */
     public function getConnection()
     {

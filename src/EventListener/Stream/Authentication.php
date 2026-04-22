@@ -34,14 +34,14 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream;
+namespace XmppFg\Xmpp\EventListener\Stream;
 
-use Fabiang\Xmpp\Event\XMLEvent;
-use Fabiang\Xmpp\Exception\RuntimeException;
-use Fabiang\Xmpp\EventListener\Stream\Authentication\AuthenticationInterface;
-use Fabiang\Xmpp\Exception\Stream\AuthenticationErrorException;
-use Fabiang\Xmpp\EventListener\AbstractEventListener;
-use Fabiang\Xmpp\EventListener\BlockingEventListenerInterface;
+use XmppFg\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Exception\RuntimeException;
+use XmppFg\Xmpp\EventListener\Stream\Authentication\AuthenticationInterface;
+use XmppFg\Xmpp\Exception\Stream\AuthenticationErrorException;
+use XmppFg\Xmpp\EventListener\AbstractEventListener;
+use XmppFg\Xmpp\EventListener\BlockingEventListenerInterface;
 
 /**
  * Listener

@@ -1,24 +1,24 @@
 <?php
 
-namespace Fabiang\Xmpp\Connection;
+namespace XmppFg\Xmpp\Connection;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\UsesClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Connection\Socket;
-use Fabiang\Xmpp\EventListener\Stream\Stream;
-use Fabiang\Xmpp\Event\Event;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Connection\Socket;
+use XmppFg\Xmpp\EventListener\Stream\Stream;
+use XmppFg\Xmpp\Event\Event;
 
 #[CoversClass(AbstractConnection::class)]
-#[UsesClass(\Fabiang\Xmpp\EventListener\AbstractEventListener::class)]
-#[UsesClass(\Fabiang\Xmpp\EventListener\Stream\Stream::class)]
-#[UsesClass(\Fabiang\Xmpp\Event\Event::class)]
-#[UsesClass(\Fabiang\Xmpp\Event\EventManager::class)]
-#[UsesClass(\Fabiang\Xmpp\Event\XMLEvent::class)]
-#[UsesClass(\Fabiang\Xmpp\Options::class)]
-#[UsesClass(\Fabiang\Xmpp\Stream\XMLStream::class)]
-#[UsesClass(\Fabiang\Xmpp\Util\XML::class)]
+#[UsesClass(\XmppFg\Xmpp\EventListener\AbstractEventListener::class)]
+#[UsesClass(\XmppFg\Xmpp\EventListener\Stream\Stream::class)]
+#[UsesClass(\XmppFg\Xmpp\Event\Event::class)]
+#[UsesClass(\XmppFg\Xmpp\Event\EventManager::class)]
+#[UsesClass(\XmppFg\Xmpp\Event\XMLEvent::class)]
+#[UsesClass(\XmppFg\Xmpp\Options::class)]
+#[UsesClass(\XmppFg\Xmpp\Stream\XMLStream::class)]
+#[UsesClass(\XmppFg\Xmpp\Util\XML::class)]
 final class AbstractConnectionTest extends TestCase
 {
 
@@ -151,7 +151,7 @@ final class AbstractConnectionTest extends TestCase
      */
     public function testReceiveWithTimeout()
     {
-        $this->expectException(\Fabiang\Xmpp\Exception\TimeoutException::class);
+        $this->expectException(\XmppFg\Xmpp\Exception\TimeoutException::class);
 
         $this->object->getOptions()->setTimeout(0);
         $this->object->connect();

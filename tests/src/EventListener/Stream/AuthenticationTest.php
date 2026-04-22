@@ -34,17 +34,17 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream;
+namespace XmppFg\Xmpp\EventListener\Stream;
 
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Event\EventManager;
-use Fabiang\Xmpp\Event\XMLEvent;
-use Fabiang\Xmpp\Exception\Stream\StreamErrorException;
-use Fabiang\Xmpp\Options;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Event\EventManager;
+use XmppFg\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Exception\Stream\StreamErrorException;
+use XmppFg\Xmpp\Options;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\EventListener\Stream\Authentication::class)]
+#[CoversClass(\XmppFg\Xmpp\EventListener\Stream\Authentication::class)]
 class AuthenticationTest extends TestCase
 {
 
@@ -80,11 +80,11 @@ class AuthenticationTest extends TestCase
      * Test what events are attached.
      *
      * @covers ::attachEvents
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
      * @return void
      */
     public function testAttachEvents()
@@ -107,11 +107,11 @@ class AuthenticationTest extends TestCase
      * @covers ::getMechanisms
      * @covers ::isBlocking
      * @covers ::isAuthenticated
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testCollectMechanisms()
@@ -135,17 +135,17 @@ class AuthenticationTest extends TestCase
      *
      * @covers ::authenticate
      * @covers ::determineMechanismClass
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication::collectMechanisms
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication::isAuthenticated
-     * @uses Fabiang\Xmpp\Util\XML
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication\Plain
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication::collectMechanisms
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication::isAuthenticated
+     * @uses XmppFg\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication\Plain
      * @return void
      */
     public function testAuthenticate()
@@ -175,17 +175,17 @@ class AuthenticationTest extends TestCase
      *
      * @covers ::authenticate
      * @covers ::determineMechanismClass
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication::isAuthenticated
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication::isAuthenticated
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
      * @return void
      */
     public function testAuthenticateWithoutMechanism()
     {
-        $this->expectException(\Fabiang\Xmpp\Exception\RuntimeException::class);
+        $this->expectException(\XmppFg\Xmpp\Exception\RuntimeException::class);
         $this->expectExceptionMessage('No supported authentication mechanism found.');
 
         $element = new \DOMElement('mechanisms');
@@ -200,18 +200,18 @@ class AuthenticationTest extends TestCase
      *
      * @covers ::authenticate
      * @covers ::determineMechanismClass
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication::collectMechanisms
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication::isAuthenticated
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication::collectMechanisms
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication::isAuthenticated
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
      * @return void
      */
     public function testAuthenticateInvalidMechanismHandler()
     {
-        $this->expectException(\Fabiang\Xmpp\Exception\RuntimeException::class);
+        $this->expectException(\XmppFg\Xmpp\Exception\RuntimeException::class);
 
         $this->object->getOptions()->setAuthenticationClasses(array('plain' => '\stdClass'));
 
@@ -231,14 +231,14 @@ class AuthenticationTest extends TestCase
      * Test authentication failure.
      *
      * @covers ::failure
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Exception\Stream\StreamErrorException
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Exception\Stream\StreamErrorException
      * @return void
      */
     public function testFailure()
@@ -264,12 +264,12 @@ class AuthenticationTest extends TestCase
      * Test successful authentication.
      *
      * @covers ::success
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication::isBlocking
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication::isBlocking
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\Event
      * @return void
      */
     public function testSuccess()

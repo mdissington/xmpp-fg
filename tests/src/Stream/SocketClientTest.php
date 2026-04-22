@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Stream;
+namespace XmppFg\Xmpp\Stream;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Stream\SocketClient::class)]
+#[CoversClass(\XmppFg\Xmpp\Stream\SocketClient::class)]
 class SocketClientTest extends TestCase
 {
 
@@ -92,7 +92,7 @@ class SocketClientTest extends TestCase
      * @covers ::connect
      * @covers ::__construct
      * @covers ::getResource
-     * @uses Fabiang\Xmpp\Util\ErrorHandler
+     * @uses XmppFg\Xmpp\Util\ErrorHandler
      */
     public function testConnect()
     {
@@ -106,7 +106,7 @@ class SocketClientTest extends TestCase
      * @covers ::connect
      * @covers ::__construct
      * @covers ::getResource
-     * @uses Fabiang\Xmpp\Util\ErrorHandler
+     * @uses XmppFg\Xmpp\Util\ErrorHandler
      */
     public function testConnectPersistent()
     {
@@ -119,11 +119,11 @@ class SocketClientTest extends TestCase
     /**
      * @covers ::reconnect
      * @covers ::getAddress
-     * @uses Fabiang\Xmpp\Stream\SocketClient::__construct
-     * @uses Fabiang\Xmpp\Stream\SocketClient::getResource
-     * @uses Fabiang\Xmpp\Stream\SocketClient::connect
-     * @uses Fabiang\Xmpp\Stream\SocketClient::close
-     * @uses Fabiang\Xmpp\Util\ErrorHandler
+     * @uses XmppFg\Xmpp\Stream\SocketClient::__construct
+     * @uses XmppFg\Xmpp\Stream\SocketClient::getResource
+     * @uses XmppFg\Xmpp\Stream\SocketClient::connect
+     * @uses XmppFg\Xmpp\Stream\SocketClient::close
+     * @uses XmppFg\Xmpp\Util\ErrorHandler
      */
     public function testReconnect()
     {
@@ -155,10 +155,10 @@ class SocketClientTest extends TestCase
 
     /**
      * @covers ::close
-     * @uses Fabiang\Xmpp\Stream\SocketClient::__construct
-     * @uses Fabiang\Xmpp\Stream\SocketClient::getResource
-     * @uses Fabiang\Xmpp\Stream\SocketClient::connect
-     * @uses Fabiang\Xmpp\Util\ErrorHandler
+     * @uses XmppFg\Xmpp\Stream\SocketClient::__construct
+     * @uses XmppFg\Xmpp\Stream\SocketClient::getResource
+     * @uses XmppFg\Xmpp\Stream\SocketClient::connect
+     * @uses XmppFg\Xmpp\Util\ErrorHandler
      */
     public function testClose()
     {
@@ -170,9 +170,9 @@ class SocketClientTest extends TestCase
 
     /**
      * @covers ::read
-     * @uses Fabiang\Xmpp\Util\ErrorHandler
-     * @uses Fabiang\Xmpp\Stream\SocketClient::__construct
-     * @uses Fabiang\Xmpp\Stream\SocketClient::connect
+     * @uses XmppFg\Xmpp\Util\ErrorHandler
+     * @uses XmppFg\Xmpp\Stream\SocketClient::__construct
+     * @uses XmppFg\Xmpp\Stream\SocketClient::connect
      */
     public function testRead()
     {
@@ -184,9 +184,9 @@ class SocketClientTest extends TestCase
 
     /**
      * @covers ::write
-     * @uses Fabiang\Xmpp\Stream\SocketClient::__construct
-     * @uses Fabiang\Xmpp\Stream\SocketClient::connect
-     * @uses Fabiang\Xmpp\Util\ErrorHandler
+     * @uses XmppFg\Xmpp\Stream\SocketClient::__construct
+     * @uses XmppFg\Xmpp\Stream\SocketClient::connect
+     * @uses XmppFg\Xmpp\Util\ErrorHandler
      */
     public function testWrite()
     {
@@ -198,9 +198,9 @@ class SocketClientTest extends TestCase
 
     /**
      * @covers ::write
-     * @uses Fabiang\Xmpp\Stream\SocketClient::__construct
-     * @uses Fabiang\Xmpp\Stream\SocketClient::connect
-     * @uses Fabiang\Xmpp\Util\ErrorHandler
+     * @uses XmppFg\Xmpp\Stream\SocketClient::__construct
+     * @uses XmppFg\Xmpp\Stream\SocketClient::connect
+     * @uses XmppFg\Xmpp\Util\ErrorHandler
      */
     public function testWriteWithLengthLimit()
     {

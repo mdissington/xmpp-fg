@@ -1,6 +1,6 @@
 <?php
 
-namespace Fabiang\Xmpp\EventListener\Stream\Authentication;
+namespace XmppFg\Xmpp\EventListener\Stream\Authentication;
 
 class ScramSha512 extends Scram
 {

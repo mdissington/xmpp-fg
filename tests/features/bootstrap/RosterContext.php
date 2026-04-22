@@ -31,10 +31,10 @@
  * @author    Fabian Grutschus <f.grutschus@lubyte.de>
  * @copyright 2014 Fabian Grutschus. All rights reserved.
  * @license   BSD
- * @link      http://github.com/fabiang/xmpp
+ * @link      http://github.com/XmppFg/xmpp
  */
 
-namespace Fabiang\Xmpp\Integration;
+namespace XmppFg\Xmpp\Integration;
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Hook\Scope\BeforeScenarioScope;
@@ -64,7 +64,7 @@ class RosterContext implements Context
             "<?xml version='1.0'?>"
             . "<stream:stream xmlns='jabber:client' xmlns:stream='http://etherx.jabber.org/streams'>",
             "<stream:features></stream:features>",
-            "<iq from='test@localhost' to='test@localhost/1234567890' id='fabiang_xmpp_52dfea36bbc83' type='result'>"
+            "<iq from='test@localhost' to='test@localhost/1234567890' id='XmppFg_xmpp_52dfea36bbc83' type='result'>"
             . "<query xmlns='jabber:iq:roster'>"
             . "<item subscription='both' name='John Doe' jid='john.doe@localhost'>"
             . "<group>MyGroup</group>"
@@ -81,7 +81,7 @@ class RosterContext implements Context
     public function rosterRequestSend()
     {
         $this->getConnection()->send(
-            '<iq type="get" id="fabiang_xmpp_1234"><query xmlns="jabber:iq:roster"/></iq>'
+            '<iq type="get" id="XmppFg_xmpp_1234"><query xmlns="jabber:iq:roster"/></iq>'
         );
     }
 
@@ -92,7 +92,7 @@ class RosterContext implements Context
     {
         $users = $this->getConnection()->getOptions()->getUsers();
         Assert::assertCount(1, $users);
-        /* @var $user \Fabiang\Xmpp\Protocol\User\User */
+        /* @var $user \XmppFg\Xmpp\Protocol\User\User */
         $user = $users[0];
         Assert::assertSame('John Doe', $user->getName());
         Assert::assertSame('john.doe@localhost', $user->getJid());
@@ -102,7 +102,7 @@ class RosterContext implements Context
 
     /**
      *
-     * @return \Fabiang\Xmpp\Connection\ConnectionTestDouble
+     * @return \XmppFg\Xmpp\Connection\ConnectionTestDouble
      */
     public function getConnection()
     {

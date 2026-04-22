@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Event;
+namespace XmppFg\Xmpp\Event;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Event\XMLEvent::class)]
+#[CoversClass(\XmppFg\Xmpp\Event\XMLEvent::class)]
 class XMLEventTest extends TestCase
 {
     /**
@@ -61,8 +61,8 @@ class XMLEventTest extends TestCase
     /**
      * Test setting and checking is start tag.
      *
-     * @covers Fabiang\Xmpp\Event\XMLEvent::isStartTag
-     * @covers Fabiang\Xmpp\Event\XMLEvent::setStartTag
+     * @covers XmppFg\Xmpp\Event\XMLEvent::isStartTag
+     * @covers XmppFg\Xmpp\Event\XMLEvent::setStartTag
      * @return void
      */
     public function testIsStartTagIsEndTagAndSetStartTag()

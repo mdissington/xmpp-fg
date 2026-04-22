@@ -34,11 +34,11 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Protocol;
+namespace XmppFg\Xmpp\Protocol;
 
-use Fabiang\Xmpp\OptionsAwareInterface;
-use Fabiang\Xmpp\EventListener\EventListenerInterface;
-use Fabiang\Xmpp\Event\EventManagerAwareInterface;
+use XmppFg\Xmpp\OptionsAwareInterface;
+use XmppFg\Xmpp\EventListener\EventListenerInterface;
+use XmppFg\Xmpp\Event\EventManagerAwareInterface;
 
 /**
  * Protocol implementation interface.

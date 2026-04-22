@@ -34,14 +34,14 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Protocol;
+namespace XmppFg\Xmpp\Protocol;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
 
-#[CoversClass(\Fabiang\Xmpp\Protocol\DefaultImplementation::class)]
+#[CoversClass(\XmppFg\Xmpp\Protocol\DefaultImplementation::class)]
 class DefaultImplementationTest extends TestCase
 {
 
@@ -66,22 +66,22 @@ class DefaultImplementationTest extends TestCase
      *
      * @covers ::register
      * @covers ::registerListener
-     * @uses Fabiang\Xmpp\Protocol\DefaultImplementation::getOptions
-     * @uses Fabiang\Xmpp\Protocol\DefaultImplementation::setOptions
-     * @uses Fabiang\Xmpp\Protocol\DefaultImplementation::getEventManager
-     * @uses Fabiang\Xmpp\Protocol\DefaultImplementation::setEventManager
-     * @uses Fabiang\Xmpp\EventListener\Stream\StreamError
-     * @uses Fabiang\Xmpp\EventListener\Stream\Authentication
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\EventListener\Stream\Bind
-     * @uses Fabiang\Xmpp\EventListener\Stream\Roster
-     * @uses Fabiang\Xmpp\EventListener\Stream\StartTls
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\EventListener\Stream\Session
-     * @uses Fabiang\Xmpp\EventListener\Stream\Stream
-     * @uses Fabiang\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Protocol\DefaultImplementation::getOptions
+     * @uses XmppFg\Xmpp\Protocol\DefaultImplementation::setOptions
+     * @uses XmppFg\Xmpp\Protocol\DefaultImplementation::getEventManager
+     * @uses XmppFg\Xmpp\Protocol\DefaultImplementation::setEventManager
+     * @uses XmppFg\Xmpp\EventListener\Stream\StreamError
+     * @uses XmppFg\Xmpp\EventListener\Stream\Authentication
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\EventListener\Stream\Bind
+     * @uses XmppFg\Xmpp\EventListener\Stream\Roster
+     * @uses XmppFg\Xmpp\EventListener\Stream\StartTls
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\EventListener\Stream\Session
+     * @uses XmppFg\Xmpp\EventListener\Stream\Stream
+     * @uses XmppFg\Xmpp\Stream\XMLStream
      * @return void
      */
     public function testRegister()
@@ -109,7 +109,7 @@ class DefaultImplementationTest extends TestCase
      */
     public function testSetAndGetOptions()
     {
-        $options = $this->getMockBuilder('Fabiang\Xmpp\Options')
+        $options = $this->getMockBuilder(Options::class)
             ->disableOriginalConstructor()
             ->getMock();
         $this->assertSame($options, $this->object->setOptions($options)->getOptions());
@@ -120,13 +120,13 @@ class DefaultImplementationTest extends TestCase
      *
      * @covers ::getEventManager
      * @covers ::setEventManager
-     * @uses Fabiang\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Event\EventManager
      * @return void
      */
     public function testSetAndGetEventManager()
     {
-        $this->assertInstanceOf('\Fabiang\Xmpp\Event\EventManager', $this->object->getEventManager());
-        $eventManager = $this->getMockBuilder('\Fabiang\Xmpp\Event\EventManager')
+        $this->assertInstanceOf(\XmppFg\Xmpp\Event\EventManager::class, $this->object->getEventManager());
+        $eventManager = $this->getMockBuilder(\XmppFg\Xmpp\Event\EventManager::class)
             ->disableOriginalConstructor()
             ->getMock();
         $this->assertSame($eventManager, $this->object->setEventManager($eventManager)->getEventManager());

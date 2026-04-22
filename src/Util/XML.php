@@ -34,7 +34,7 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Util;
+namespace XmppFg\Xmpp\Util;
 
 /**
  * XML utility methods.
@@ -75,7 +75,7 @@ class XML
      */
     public static function generateId(): string
     {
-        return static::quote('fabiang_xmpp_' . uniqid());
+        return static::quote('xmppfg_xmpp_' . uniqid());
     }
 
     /**

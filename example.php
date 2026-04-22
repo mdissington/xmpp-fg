@@ -6,12 +6,11 @@ set_time_limit(0);
 
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Client;
-
-use Fabiang\Xmpp\Protocol\Roster;
-use Fabiang\Xmpp\Protocol\Presence;
-use Fabiang\Xmpp\Protocol\Message;
+use XmppFg\Xmpp\Client;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Protocol\Roster;
+use XmppFg\Xmpp\Protocol\Presence;
+use XmppFg\Xmpp\Protocol\Message;
 
 $logger = new Logger('xmpp');
 $logger->pushHandler(new StreamHandler('php://stdout', Logger::DEBUG));

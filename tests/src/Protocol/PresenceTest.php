@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Protocol;
+namespace XmppFg\Xmpp\Protocol;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Protocol\Presence::class)]
+#[CoversClass(\XmppFg\Xmpp\Protocol\Presence::class)]
 class PresenceTest extends TestCase
 {
 
@@ -63,15 +63,15 @@ class PresenceTest extends TestCase
      * Test truning object into string.
      *
      * @covers ::toString
-     * @uses Fabiang\Xmpp\Protocol\Presence::__construct
-     * @uses Fabiang\Xmpp\Protocol\Presence::getTo
-     * @uses Fabiang\Xmpp\Protocol\Presence::setTo
-     * @uses Fabiang\Xmpp\Protocol\Presence::setPriority
-     * @uses Fabiang\Xmpp\Protocol\Presence::getPriority
-     * @uses Fabiang\Xmpp\Protocol\Presence::setNickname
-     * @uses Fabiang\Xmpp\Protocol\Presence::getNickname
-     * @uses Fabiang\Xmpp\Util\XML::generateId
-     * @uses Fabiang\Xmpp\Util\XML::quote
+     * @uses XmppFg\Xmpp\Protocol\Presence::__construct
+     * @uses XmppFg\Xmpp\Protocol\Presence::getTo
+     * @uses XmppFg\Xmpp\Protocol\Presence::setTo
+     * @uses XmppFg\Xmpp\Protocol\Presence::setPriority
+     * @uses XmppFg\Xmpp\Protocol\Presence::getPriority
+     * @uses XmppFg\Xmpp\Protocol\Presence::setNickname
+     * @uses XmppFg\Xmpp\Protocol\Presence::getNickname
+     * @uses XmppFg\Xmpp\Util\XML::generateId
+     * @uses XmppFg\Xmpp\Util\XML::quote
      * @return void
      */
     public function testToString()
@@ -85,12 +85,12 @@ class PresenceTest extends TestCase
      * Test constructor.
      *
      * @covers ::__construct
-     * @uses Fabiang\Xmpp\Protocol\Presence::getTo
-     * @uses Fabiang\Xmpp\Protocol\Presence::setTo
-     * @uses Fabiang\Xmpp\Protocol\Presence::setPriority
-     * @uses Fabiang\Xmpp\Protocol\Presence::getPriority
-     * @uses Fabiang\Xmpp\Protocol\Presence::setNickname
-     * @uses Fabiang\Xmpp\Protocol\Presence::getNickname
+     * @uses XmppFg\Xmpp\Protocol\Presence::getTo
+     * @uses XmppFg\Xmpp\Protocol\Presence::setTo
+     * @uses XmppFg\Xmpp\Protocol\Presence::setPriority
+     * @uses XmppFg\Xmpp\Protocol\Presence::getPriority
+     * @uses XmppFg\Xmpp\Protocol\Presence::setNickname
+     * @uses XmppFg\Xmpp\Protocol\Presence::getNickname
      * @return void
      */
     public function testConstructor()
@@ -110,7 +110,7 @@ class PresenceTest extends TestCase
      * @covers ::setPriority
      * @covers ::setNickname
      * @covers ::getNickname
-     * @uses Fabiang\Xmpp\Protocol\Presence::__construct
+     * @uses XmppFg\Xmpp\Protocol\Presence::__construct
      * @return void
      */
     public function testSetterAndGetter()

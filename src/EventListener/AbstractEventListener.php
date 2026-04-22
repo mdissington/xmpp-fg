@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener;
+namespace XmppFg\Xmpp\EventListener;
 
-use Fabiang\Xmpp\Connection\ConnectionInterface;
-use Fabiang\Xmpp\Event\EventManagerInterface;
-use Fabiang\Xmpp\Event\EventManager;
-use Fabiang\Xmpp\Options;
+use XmppFg\Xmpp\Connection\ConnectionInterface;
+use XmppFg\Xmpp\Event\EventManagerInterface;
+use XmppFg\Xmpp\Event\EventManager;
+use XmppFg\Xmpp\Options;
 
 /**
  * Abstract implementaion of event listener

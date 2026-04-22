@@ -34,15 +34,15 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream;
+namespace XmppFg\Xmpp\EventListener\Stream;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Event\XMLEvent;
 
-#[CoversClass(\Fabiang\Xmpp\EventListener\Stream\StartTls::class)]
+#[CoversClass(\XmppFg\Xmpp\EventListener\Stream\StartTls::class)]
 class StartTlsTest extends TestCase
 {
 
@@ -79,11 +79,11 @@ class StartTlsTest extends TestCase
      * Test attaching events.
      *
      * @covers ::attachEvents
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
      * @return void
      */
     public function testAttachEvents()
@@ -117,13 +117,13 @@ class StartTlsTest extends TestCase
      * Test starttls event
      * @covers ::starttlsEvent
      * @covers ::isBlocking
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
      * @return void
      */
     public function testStarttls()
@@ -147,15 +147,15 @@ class StartTlsTest extends TestCase
      * Test proceed event.
      *
      * @covers ::proceed
-     * @uses Fabiang\Xmpp\EventListener\Stream\StartTls::isBlocking
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Util\XML
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\EventListener\Stream\StartTls::isBlocking
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
      * @depends testStarttls
      * @return void
      */

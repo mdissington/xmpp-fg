@@ -31,22 +31,22 @@
  * @author    Fabian Grutschus <f.grutschus@lubyte.de>
  * @copyright 2014 Fabian Grutschus. All rights reserved.
  * @license   BSD
- * @link      http://github.com/fabiang/xmpp
+ * @link      http://github.com/XmppFg/xmpp
  */
 
-namespace Fabiang\Xmpp\Connection;
+namespace XmppFg\Xmpp\Connection;
 
-use Fabiang\Xmpp\Event\Event;
-use Fabiang\Xmpp\Event\EventManager;
-use Fabiang\Xmpp\EventListener\Stream\Stream;
-use Fabiang\Xmpp\Options;
-use Fabiang\Xmpp\Stream\SocketClient;
-use Fabiang\Xmpp\Stream\XMLStream;
+use XmppFg\Xmpp\Event\Event;
+use XmppFg\Xmpp\Event\EventManager;
+use XmppFg\Xmpp\EventListener\Stream\Stream;
+use XmppFg\Xmpp\Options;
+use XmppFg\Xmpp\Stream\SocketClient;
+use XmppFg\Xmpp\Stream\XMLStream;
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 use Psr\Log\LogLevel;
 
-#[CoversClass(\Fabiang\Xmpp\Connection\Socket::class)]
+#[CoversClass(\XmppFg\Xmpp\Connection\Socket::class)]
 class SocketTest extends TestCase
 {
 
@@ -60,7 +60,7 @@ class SocketTest extends TestCase
     #[\Override]
     protected function setUp(): void
     {
-        $mock = $this->getMockBuilder('\Fabiang\Xmpp\Stream\SocketClient')
+        $mock = $this->getMockBuilder(\XmppFg\Xmpp\Stream\SocketClient::class)
             ->setConstructorArgs(array( 'tcp://localhost:9999' ))
             ->onlyMethods([ 'read', 'write', 'connect', 'close', 'setBlocking' ])
             ->getMock();
@@ -73,11 +73,11 @@ class SocketTest extends TestCase
      * Test constructor.
      *
      * @covers ::__construct
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Connection\Socket::getSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Connection\Socket::getSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testConstructor()
@@ -91,19 +91,19 @@ class SocketTest extends TestCase
      * Test receivding data.
      *
      * @covers ::receive
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Connection\Socket::getAddress
-     * @uses Fabiang\Xmpp\Connection\Socket::getSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Connection\Socket::getAddress
+     * @uses XmppFg\Xmpp\Connection\Socket::getSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\EventManager
      * @return void
      */
     public function testReceive()
@@ -125,18 +125,18 @@ class SocketTest extends TestCase
      * Test sending data.
      *
      * @covers ::send
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Connection\Socket::connect
-     * @uses Fabiang\Xmpp\Connection\Socket::getAddress
-     * @uses Fabiang\Xmpp\Connection\Socket::getSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Connection\Socket::connect
+     * @uses XmppFg\Xmpp\Connection\Socket::getAddress
+     * @uses XmppFg\Xmpp\Connection\Socket::getSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\EventManager
      * @return void
      */
     public function testSend() {
@@ -169,18 +169,18 @@ class SocketTest extends TestCase
      *
      * @covers ::connect
      * @covers ::isConnected
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Connection\Socket::send
-     * @uses Fabiang\Xmpp\Connection\Socket::getAddress
-     * @uses Fabiang\Xmpp\Connection\Socket::getSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Connection\Socket::send
+     * @uses XmppFg\Xmpp\Connection\Socket::getAddress
+     * @uses XmppFg\Xmpp\Connection\Socket::getSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\EventManager
      * @return void
      */
     public function testConnect()
@@ -197,19 +197,19 @@ class SocketTest extends TestCase
      *
      * @covers ::log
      * @covers ::getAddress
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Connection\Socket::send
-     * @uses Fabiang\Xmpp\Connection\Socket::connect
-     * @uses Fabiang\Xmpp\Connection\Socket::getSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Util\XML
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Connection\Socket::send
+     * @uses XmppFg\Xmpp\Connection\Socket::connect
+     * @uses XmppFg\Xmpp\Connection\Socket::getSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
      * @return void
      */
     public function testLogging()
@@ -236,13 +236,13 @@ class SocketTest extends TestCase
      * Test reseting streams.
      *
      * @covers ::resetStreams
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
      * @return void
      */
     public function testResetStreams()
@@ -261,19 +261,19 @@ class SocketTest extends TestCase
      *
      * @covers ::disconnect
      * @covers ::isConnected
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Connection\Socket::send
-     * @uses Fabiang\Xmpp\Connection\Socket::connect
-     * @uses Fabiang\Xmpp\Connection\Socket::getAddress
-     * @uses Fabiang\Xmpp\Connection\Socket::getSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Util\XML
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Connection\Socket::send
+     * @uses XmppFg\Xmpp\Connection\Socket::connect
+     * @uses XmppFg\Xmpp\Connection\Socket::getAddress
+     * @uses XmppFg\Xmpp\Connection\Socket::getSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Util\XML
      * @return void
      */
     public function testDisconnect()
@@ -294,10 +294,10 @@ class SocketTest extends TestCase
     /**
      * @covers ::getSocket
      * @covers ::setSocket
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testSetAndGetSocket()
@@ -311,11 +311,11 @@ class SocketTest extends TestCase
      *
      * @covers ::addListener
      * @covers ::getListeners
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testAddListener()
@@ -330,12 +330,12 @@ class SocketTest extends TestCase
      *
      * @covers ::getOutputStream
      * @covers ::setOutputStream
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testGetAndSetOutputStream()
@@ -350,12 +350,12 @@ class SocketTest extends TestCase
      *
      * @covers ::getInputStream
      * @covers ::setInputStream
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testGetAndSetInputStream()
@@ -370,12 +370,12 @@ class SocketTest extends TestCase
      *
      * @covers ::getEventManager
      * @covers ::setEventManager
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
      * @return void
      */
     public function testSetAndGetEventManager()
@@ -391,21 +391,21 @@ class SocketTest extends TestCase
      * @covers ::receive
      * @covers ::checkTimeout
      * @covers ::reconnectTls
-     * @uses Fabiang\Xmpp\Connection\Socket::__construct
-     * @uses Fabiang\Xmpp\Connection\Socket::send
-     * @uses Fabiang\Xmpp\Connection\Socket::connect
-     * @uses Fabiang\Xmpp\Connection\Socket::getAddress
-     * @uses Fabiang\Xmpp\Connection\Socket::getSocket
-     * @uses Fabiang\Xmpp\Connection\Socket::setSocket
-     * @uses Fabiang\Xmpp\Stream\SocketClient
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Event\XMLEvent
-     * @uses Fabiang\Xmpp\Util\XML
-     * @ expectedException \Fabiang\Xmpp\Exception\TimeoutException
+     * @uses XmppFg\Xmpp\Connection\Socket::__construct
+     * @uses XmppFg\Xmpp\Connection\Socket::send
+     * @uses XmppFg\Xmpp\Connection\Socket::connect
+     * @uses XmppFg\Xmpp\Connection\Socket::getAddress
+     * @uses XmppFg\Xmpp\Connection\Socket::getSocket
+     * @uses XmppFg\Xmpp\Connection\Socket::setSocket
+     * @uses XmppFg\Xmpp\Stream\SocketClient
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\Util\XML
+     * @ expectedException \XmppFg\Xmpp\Exception\TimeoutException
      * @ expectedExceptionMessage Connection lost after 0 seconds
      * @medium
      * @return void

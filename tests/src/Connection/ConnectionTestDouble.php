@@ -34,10 +34,10 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Connection;
+namespace XmppFg\Xmpp\Connection;
 
-use Fabiang\Xmpp\EventListener\BlockingEventListenerInterface;
-use Fabiang\Xmpp\Util\XML;
+use XmppFg\Xmpp\EventListener\BlockingEventListenerInterface;
+use XmppFg\Xmpp\Util\XML;
 
 /**
  * Connection test double.

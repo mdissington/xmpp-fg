@@ -34,18 +34,18 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\Util;
+namespace XmppFg\Xmpp\Util;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
 
-#[CoversClass(\Fabiang\Xmpp\Util\XML::class)]
+#[CoversClass(\XmppFg\Xmpp\Util\XML::class)]
 class XMLTest extends TestCase
 {
 
     /**
      * @covers ::quoteMessage
-     * @uses Fabiang\Xmpp\Util\XML::quote
+     * @uses XmppFg\Xmpp\Util\XML::quote
      */
     public function testQuoteMessage()
     {
@@ -57,7 +57,7 @@ class XMLTest extends TestCase
 
     /**
      * @covers ::quoteMessage
-     * @uses Fabiang\Xmpp\Util\XML::quote
+     * @uses XmppFg\Xmpp\Util\XML::quote
      */
     public function testQuoteMessageNoVariables()
     {
@@ -66,7 +66,7 @@ class XMLTest extends TestCase
 
     /**
      * @covers ::quote
-     * @uses Fabiang\Xmpp\Util\XML::quote
+     * @uses XmppFg\Xmpp\Util\XML::quote
      */
     public function testQuote()
     {
@@ -75,7 +75,7 @@ class XMLTest extends TestCase
 
     /**
      * @covers ::quote
-     * @uses Fabiang\Xmpp\Util\XML::quote
+     * @uses XmppFg\Xmpp\Util\XML::quote
      * @requires PHP 5.4
      */
     public function testQuoteAsXml()
@@ -85,17 +85,17 @@ class XMLTest extends TestCase
 
     /**
      * @covers ::generateId
-     * @uses Fabiang\Xmpp\Util\XML::quote
+     * @uses XmppFg\Xmpp\Util\XML::quote
      */
     public function testGenerateId()
     {
-        $this->assertStringStartsWith('fabiang_xmpp_', XML::generateId());
+        $this->assertStringStartsWith('xmppfg_xmpp_', XML::generateId());
     }
 
     /**
      * @covers ::base64Encode
      * @covers ::base64Decode
-     * @uses Fabiang\Xmpp\Util\XML::quote
+     * @uses XmppFg\Xmpp\Util\XML::quote
      */
     public function testBase64()
     {

@@ -34,15 +34,15 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream;
+namespace XmppFg\Xmpp\EventListener\Stream;
 
 use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\TestCase;
-use Fabiang\Xmpp\Event\XMLEvent;
-use Fabiang\Xmpp\Connection\ConnectionTestDouble;
-use Fabiang\Xmpp\Options;
+use XmppFg\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\Connection\ConnectionTestDouble;
+use XmppFg\Xmpp\Options;
 
-#[CoversClass(\Fabiang\Xmpp\EventListener\Stream\Stream::class)]
+#[CoversClass(\XmppFg\Xmpp\EventListener\Stream\Stream::class)]
 class StreamTest extends TestCase
 {
 
@@ -80,11 +80,11 @@ class StreamTest extends TestCase
      * @covers ::getInputEventManager
      * @covers ::getOutputEventManager
      * @covers ::getConnection
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\EventManager
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Stream\XMLStream
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\EventManager
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Stream\XMLStream
      * @return void
      */
     public function testAttachEvents()
@@ -104,11 +104,11 @@ class StreamTest extends TestCase
      * @covers ::streamServer
      * @covers ::features
      * @covers ::isBlocking
-     * @uses Fabiang\Xmpp\EventListener\AbstractEventListener
-     * @uses Fabiang\Xmpp\Connection\AbstractConnection
-     * @uses Fabiang\Xmpp\Event\Event
-     * @uses Fabiang\Xmpp\Options
-     * @uses Fabiang\Xmpp\Event\XMLEvent
+     * @uses XmppFg\Xmpp\EventListener\AbstractEventListener
+     * @uses XmppFg\Xmpp\Connection\AbstractConnection
+     * @uses XmppFg\Xmpp\Event\Event
+     * @uses XmppFg\Xmpp\Options
+     * @uses XmppFg\Xmpp\Event\XMLEvent
      * @return void
      */
     public function testEvents()

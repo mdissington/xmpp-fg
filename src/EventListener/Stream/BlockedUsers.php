@@ -34,12 +34,12 @@
  * @link      http://github.com/fabiang/xmpp
  */
 
-namespace Fabiang\Xmpp\EventListener\Stream;
+namespace XmppFg\Xmpp\EventListener\Stream;
 
-use Fabiang\Xmpp\Event\XMLEvent;
-use Fabiang\Xmpp\EventListener\AbstractEventListener;
-use Fabiang\Xmpp\EventListener\BlockingEventListenerInterface;
-use Fabiang\Xmpp\Protocol\User\User;
+use XmppFg\Xmpp\Event\XMLEvent;
+use XmppFg\Xmpp\EventListener\AbstractEventListener;
+use XmppFg\Xmpp\EventListener\BlockingEventListenerInterface;
+use XmppFg\Xmpp\Protocol\User\User;
 
 /**
  * Listener

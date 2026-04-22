@@ -1,9 +1,9 @@
 {
-    "name": "zorn-v/xmpp",
-    "description": "Library for XMPP protocol (Jabber) connections",
+    "name": "xmpp-fg/xmpp-fg",
+    "description": "XMPP client library",
     "type": "library",
     "license": "BSD-2-Clause",
-    "homepage": "https://github.com/mdissington/xmpp",
+    "homepage": "https://github.com/mdissington/xmpp-fg",
     "keywords": [
         "jabber",
         "xmpp"
@@ -27,13 +27,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "Fabiang\\Xmpp\\": "src/"
+            "XmppFg\\Xmpp\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Fabiang\\Xmpp\\": "tests/src/",
-            "Fabiang\\Xmpp\\Integration\\": "tests/features/bootstrap/"
+            "XmppFg\\Xmpp\\": "tests/src/",
+            "XmppFg\\Xmpp\\Integration\\": "tests/features/bootstrap/"
         }
     },
     "require": {
@@ -43,18 +43,13 @@
     "require-dev": {
         "behat/behat": "^3.23",
         "monolog/monolog": "^3.9",
-        "phpstan/phpstan": "^2.1.23",
-        "phpstan/phpstan-strict-rules": "^2.0.6",
-        "phpunit/php-code-coverage": "^12.3.7",
-        "phpunit/phpunit": "^12.3.9"
+        "phpstan/phpstan": "^2.1.31",
+        "phpstan/phpstan-strict-rules": "^2.0.7",
+        "phpunit/php-code-coverage": "^12.4.0",
+        "phpunit/phpunit": "^12.4.1"
     },
     "suggest": {
         "psr/log-implementation": "Allows more advanced logging of the XMPP connection"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "2.0.x-dev"
-        }
     },
     "config": {
         "platform": {
