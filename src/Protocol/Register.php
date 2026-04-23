@@ -24,7 +24,7 @@ class Register implements ProtocolImplementationInterface
 
     protected string $sid;
 
-    public function __construct( string $to = null, string $from = null, string $step = 'one' )
+    public function __construct( string|null $to = null, string|null $from = null, string $step = 'one' )
     {
         $this->setTo($to);
         $this->setFrom($from);

@@ -52,10 +52,10 @@ class SocketClient
     const int BUFFER_LENGTH = 4096;
 
     /**
-     * @var ?resource
+     * @var resource|null
      */
     protected $resource        = null;
-    protected ?string $address = null;
+    protected string|null $address = null;
 
     /**
      * Options used to create a stream context
@@ -63,7 +63,7 @@ class SocketClient
      */
     protected array $options = [];
 
-    public function __construct(string $address, array $options = null)
+    public function __construct(string $address, array|null $options = null)
     {
         $this->address = $address;
         $this->options = $options ?? [];
@@ -84,7 +84,7 @@ class SocketClient
 
         // call stream_socket_client with custom error handler enabled
         $handler = new ErrorHandler(
-            function ($address, $timeout, $flags, ?array $options = null) {
+            function ($address, $timeout, $flags, array|null $options = null) {
                 $errno  = null;
                 $errstr = null;
 
@@ -109,7 +109,7 @@ class SocketClient
     /**
      * Reconnect and optionally use different address
      */
-    public function reconnect(?string $address = null, ?int $timeout = 30, ?bool $persistent = false): void
+    public function reconnect(string|null $address = null, int|null $timeout = 30, bool $persistent = false): void
     {
         $this->close();
 
@@ -168,10 +168,10 @@ class SocketClient
     }
 
     /**
-     * @param int $length Limit of bytes to write
+     * @param int|null $length Limit of bytes to write
      * @throws SocketException
      */
-    public function write(string $string, int $length = null): int
+    public function write(string $string, int|null $length = null): int
     {
         try {
             $handler = new ErrorHandler(fwrite(...), $this->resource, $string, $length);
@@ -189,11 +189,11 @@ class SocketClient
 
     /**
      * Enable/disable cryptography on stream
-     * @param int $cryptoType One of the STREAM_CRYPTO_METHOD_* constants
+     * @param int|null $cryptoType One of the STREAM_CRYPTO_METHOD_* constants
      * @throws SocketException
      * @throws InvalidArgumentException
      */
-    public function crypto(bool $enable, ?int $cryptoType = null): int|bool
+    public function crypto(bool $enable, int|null $cryptoType = null): int|bool
     {
         try {
             if (false === $enable) {
@@ -222,7 +222,7 @@ class SocketClient
         return $this->resource;
     }
 
-    public function getAddress(): ?string
+    public function getAddress(): string|null
     {
         return $this->address;
     }

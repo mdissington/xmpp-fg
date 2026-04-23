@@ -11,7 +11,7 @@ Library for XMPP protocol connections (Jabber) for PHP.
 Install [Composer](https://getcomposer.org/download/) and then
 
 ```bash
-composer require zorn-v/xmpp
+composer require xmpp-fg/xmpp-fg
 ```
 
 ## DOCUMENTATION
@@ -116,16 +116,23 @@ $client->disconnect();
 ## DEVELOPING
 
 If you like this library and you want to contribute, make sure the unit-tests and integration tests are running.
-Composer will help you to install the right version of PHPUnit and [Behat](http://behat.org/).
+Composer will help you to install the right version of PHPUnit.
 
     composer install
 
-After that:
+Test with:
 
-    ./vendor/bin/phpunit
-    ./vendor/bin/behat
+    composer test
 
-New features should always tested with Behat.
+Run code analysis with:
+
+    composer analyse
+
+You can run both together using:
+
+    composer test-and-analyse
+
+New features should always developed using TDD with PHPUnit.
 
 ## LICENSE
 
@@ -133,6 +140,4 @@ BSD-2-Clause. See the [LICENSE](LICENSE.md).
 
 ## TODO
 
-- Better integration of channels
-- Factory method for server addresses
 - improve documentation

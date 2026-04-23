@@ -89,6 +89,25 @@ class StartTls extends AbstractEventListener implements BlockingEventListenerInt
 
             $connection->resetStreams();
             $connection->connect();
+            //
+            //if ($connection instanceof SocketConnectionInterface) {
+            //    $resource = $connection->getSocket()->getResource();
+            //
+            //    if (is_resource($resource)) {
+            //        $this->getEventManager()->trigger('logger', $this, ['socket resource metadata: '.\XmppFg\Xmpp\Util\ErrorHandler::get_var_dump(stream_get_meta_data($resource)), \Psr\Log\LogLevel::DEBUG]);
+            //    }
+            //
+            //    $context_options = stream_context_get_options($resource);
+            //
+            //    if (($context_options['ssl']['peer_certificate'] ?? null) instanceof \OpenSSLCertificate) {
+            //        $certinfo = openssl_x509_parse($context_options['ssl']['peer_certificate']);
+            //        $this->getEventManager()->trigger('logger', $this, ['$certinfo: '.\XmppFg\Xmpp\Util\ErrorHandler::get_var_dump($certinfo, 1), \Psr\Log\LogLevel::DEBUG]);
+            //    }
+            //
+            //    if (isset($certinfo['validTo_time_t'])) {
+            //        $this->getEventManager()->trigger('logger', $this, ['certificate expires: in ('.($certinfo['validTo_time_t'] - microtime(true)).')s '.\XmppFg\Xmpp\Util\ErrorHandler::get_var_dump($certinfo['validTo_time_t']), \Psr\Log\LogLevel::DEBUG]);
+            //    }
+            //}
         }
     }
 

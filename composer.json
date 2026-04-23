@@ -32,8 +32,7 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "XmppFg\\Xmpp\\": "tests/src/",
-            "XmppFg\\Xmpp\\Integration\\": "tests/features/bootstrap/"
+            "XmppFg\\Xmpp\\": "tests/src/"
         }
     },
     "require": {
@@ -41,10 +40,9 @@
         "psr/log": "^2.0 || ^3.0"
     },
     "require-dev": {
-        "behat/behat": "^3.23",
         "monolog/monolog": "^3.9",
         "phpstan/phpstan": "^2.1.31",
-        "phpstan/phpstan-strict-rules": "^2.0.7",
+        "phpstan/phpstan-strict-rules": "^2.0.9",
         "phpunit/php-code-coverage": "^12.4.0",
         "phpunit/phpunit": "^12.4.1"
     },
@@ -52,17 +50,15 @@
         "psr/log-implementation": "Allows more advanced logging of the XMPP connection"
     },
     "config": {
-        "platform": {
-            "php": "8.3"
-        },
-        "sort-packages": true
+        "sort-packages": true,
+        "//audit": {
+            "ignore": ["PKSA-z3gr-8qht-p93v"]
+		}
     },
     "archive": {
         "exclude": [
             ".gitignore",
             ".gitattributes",
-            ".scrutinizer.yml",
-            ".travis.yml",
             "/tests",
             "/docs",
             "/bin",
